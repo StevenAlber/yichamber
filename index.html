@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yi Chamber · 易室</title>
+  <meta name="description" content="The first sound architecture built on the 3,000-year-old structure of the Yi Jing. Hoi An, opening 2026.">
+  <meta property="og:title" content="Yi Chamber">
+  <meta property="og:description" content="The first sound architecture built on the 3,000-year-old structure of the Yi Jing. Hoi An, opening 2026.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yichamber.com">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Sans:wght@300;400;500&family=Noto+Serif+TC:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #1A1A1A;
+      --rice: #F4EFE6;
+      --bone: #EDE7D9;
+      --brass: #9C7B3C;
+      --ochre: #8B5E3C;
+      --cinnabar: #8B2E1F;
+      --patina: #6B5D45;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      background: var(--ink);
+      color: var(--rice);
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-weight: 300;
+      letter-spacing: 0.01em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Subtle paper texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 25% 25%, rgba(156, 123, 60, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(139, 94, 60, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Resonance circles — barely visible */
+    .resonance {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      border: 1px solid var(--brass);
+      border-radius: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .resonance:nth-child(1) { animation: pulse 8s ease-out infinite; }
+    .resonance:nth-child(2) { animation: pulse 8s ease-out infinite 2s; }
+    .resonance:nth-child(3) { animation: pulse 8s ease-out infinite 4s; }
+
+    @keyframes pulse {
+      0% { width: 100px; height: 100px; opacity: 0; }
+      20% { opacity: 0.15; }
+      100% { width: 800px; height: 800px; opacity: 0; }
+    }
+
+    main {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+      animation: fadeIn 2s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .wordmark {
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      letter-spacing: 0.15em;
+      color: var(--rice);
+      margin-bottom: 1.5rem;
+      animation: fadeIn 2s ease-out 0.3s both;
+    }
+
+    .seal {
+      font-family: 'Noto Serif TC', serif;
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      color: var(--brass);
+      letter-spacing: 0.3em;
+      margin-bottom: 3rem;
+      animation: fadeIn 2s ease-out 0.6s both, breathe 6s ease-in-out infinite 2s;
+    }
+
+    @keyframes breathe {
+      0%, 100% { opacity: 0.85; }
+      50% { opacity: 1; }
+    }
+
+    .tagline {
+      font-family: 'EB Garamond', serif;
+      font-style: italic;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      line-height: 1.6;
+      color: var(--brass);
+      max-width: 480px;
+      margin: 0 auto 4rem;
+      letter-spacing: 0.02em;
+      animation: fadeIn 2s ease-out 0.9s both;
+    }
+
+    .inquire {
+      display: inline-block;
+      font-family: 'IBM Plex Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--rice);
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border: 1px solid var(--brass);
+      background: transparent;
+      transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      animation: fadeIn 2s ease-out 1.2s both;
+      cursor: pointer;
+    }
+
+    .inquire:hover {
+      background: var(--brass);
+      color: var(--ink);
+      letter-spacing: 0.25em;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      color: var(--patina);
+      text-transform: uppercase;
+      animation: fadeIn 2s ease-out 1.5s both;
+      z-index: 2;
+      text-align: center;
+      width: 100%;
+    }
+
+    footer .separator {
+      margin: 0 0.75rem;
+      color: var(--brass);
+      opacity: 0.5;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 480px) {
+      body { padding: 1.5rem; }
+      .wordmark { margin-bottom: 1rem; }
+      .seal { margin-bottom: 2rem; }
+      .tagline { margin-bottom: 3rem; }
+      footer { font-size: 0.65rem; bottom: 1.5rem; }
+    }
+
+    /* Respect user preference for reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="resonance"></div>
+  <div class="resonance"></div>
+  <div class="resonance"></div>
+
+  <main>
+    <h1 class="wordmark">YI CHAMBER</h1>
+    <div class="seal">易 室</div>
+    <p class="tagline">
+      The first sound architecture built on the<br>
+      3,000-year-old structure of the Yi Jing.
+    </p>
+    <a href="mailto:inquire@yichamber.com?subject=Yi%20Chamber%20Inquiry" class="inquire">
+      Inquire
+    </a>
+  </main>
+
+  <footer>
+    Hoi An <span class="separator">·</span> Opening 2026
+  </footer>
+
+</body>
+</html>
