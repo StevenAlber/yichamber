@@ -2250,7 +2250,7 @@ img { max-width: 100%; height: auto; display: block; }
   // Submit — sends to backend (Cloudflare Worker), then redirects to thanks page.
   // No mailto. No ASCII. Nothing visible to the user.
   // --------------------------------------------------------------------
-  const SUBMIT_ENDPOINT = 'https://api.yichamber.com/apply';
+  const SUBMIT_ENDPOINT = 'https://yichamber-apply.khorasystems.workers.dev/apply';
 
   const submitBtn = document.getElementById('submit-btn');
   const submitLabel = submitBtn.querySelector('span:not(.btn__arrow)');
