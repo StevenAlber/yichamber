@@ -27,17 +27,19 @@
    YI CHAMBER — Master Stylesheet
    Steven Alber · Yi Chamber · Hoi An · 2026
    ======================================================================== */
-  /* Screen reader only utility */
+  /* Screen reader only utility — bulletproof, works inside flex/grid */
   .sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(50%) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+    left: -10000px !important;
   }
 
 
@@ -297,15 +299,23 @@ a { color: inherit; text-decoration: none; }
 .hero__wordmark .word {
   display: inline-flex;
   gap: 0.02em;
+  overflow: hidden;
 }
 .hero__wordmark .letter {
   display: inline-block;
   opacity: 0;
-  transform: translateY(28px);
-  animation: letter-rise 1200ms var(--ease-out) forwards;
+  transform: translateY(0.5em);
+  animation: wordmark-rise 1400ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
-@keyframes letter-rise {
-  to { opacity: 1; transform: translateY(0); }
+@keyframes wordmark-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(0.5em);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero__seal {
@@ -1318,17 +1328,10 @@ a { color: inherit; text-decoration: none; }
 
       <h1 class="hero__wordmark" aria-label="Yi Chamber"><span class="sr-only">Yi Chamber</span>
         <span class="word" aria-hidden="true">
-          <span class="letter" style="animation-delay: 1100ms">Y</span>
-          <span class="letter" style="animation-delay: 1180ms">I</span>
+          <span class="letter" style="animation-delay: 600ms">Y</span><span class="letter" style="animation-delay: 660ms">I</span>
         </span>
         <span class="word" aria-hidden="true">
-          <span class="letter" style="animation-delay: 1320ms">C</span>
-          <span class="letter" style="animation-delay: 1400ms">H</span>
-          <span class="letter" style="animation-delay: 1480ms">A</span>
-          <span class="letter" style="animation-delay: 1560ms">M</span>
-          <span class="letter" style="animation-delay: 1640ms">B</span>
-          <span class="letter" style="animation-delay: 1720ms">E</span>
-          <span class="letter" style="animation-delay: 1800ms">R</span>
+          <span class="letter" style="animation-delay: 800ms">C</span><span class="letter" style="animation-delay: 860ms">H</span><span class="letter" style="animation-delay: 920ms">A</span><span class="letter" style="animation-delay: 980ms">M</span><span class="letter" style="animation-delay: 1040ms">B</span><span class="letter" style="animation-delay: 1100ms">E</span><span class="letter" style="animation-delay: 1160ms">R</span>
         </span>
       </h1>
 
