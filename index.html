@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -1279,6 +1280,28 @@ a { color: inherit; text-decoration: none; }
   display: none !important;
 }
 
+
+.s6__visual {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+.s6__bagua {
+  position: absolute;
+  width: 78%;
+  height: 78%;
+  top: 11%;
+  left: 11%;
+  opacity: 0.85;
+}
+.s6__count-wrap {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  z-index: 2;
+}
+
 </style>
 
 <script type="application/ld+json">
@@ -1301,12 +1324,14 @@ a { color: inherit; text-decoration: none; }
   }
 }
 </script>
+
 </head>
 <body>
 
 <!-- ============================================================
      TOPBAR — fixed
      ============================================================ -->
+
 <header class="topbar is-dark">
   <a href="#" class="topbar__seal" aria-label="Yi Chamber">易 室</a>
   <nav class="topbar__nav" aria-label="Primary">
@@ -1323,67 +1348,72 @@ a { color: inherit; text-decoration: none; }
 <!-- ============================================================
      SECTION 1 — HERO (THRESHOLD)
      ============================================================ -->
+
 <section class="hero" aria-label="Yi Chamber">
   <div class="hero__image" aria-hidden="true"></div>
   <div class="hero__grain" aria-hidden="true"></div>
 
   <div class="hero__inner">
 
-    <div></div>
+```
+<div></div>
 
-    <div class="hero__center">
-      <div class="hero__overline">
-        <span>Hoi An &middot; Opening 2026</span>
-      </div>
+<div class="hero__center">
+  <div class="hero__overline">
+    <span>Hoi An &middot; Opening 2026</span>
+  </div>
 
-      <h1 class="hero__wordmark" aria-label="Yi Chamber"><span class="sr-only">Yi Chamber</span>
-        <span class="word" aria-hidden="true">
-          <span class="letter" style="animation-delay: 600ms">Y</span>
-          <span class="letter" style="animation-delay: 660ms">I</span>
-        </span>
-        <span class="word" aria-hidden="true">
-          <span class="letter" style="animation-delay: 800ms">C</span>
-          <span class="letter" style="animation-delay: 860ms">H</span>
-          <span class="letter" style="animation-delay: 920ms">A</span>
-          <span class="letter" style="animation-delay: 980ms">M</span>
-          <span class="letter" style="animation-delay: 1040ms">B</span>
-          <span class="letter" style="animation-delay: 1100ms">E</span>
-          <span class="letter" style="animation-delay: 1160ms">R</span>
-        </span>
-      </h1>
+  <h1 class="hero__wordmark" aria-label="Yi Chamber"><span class="sr-only">Yi Chamber</span>
+    <span class="word" aria-hidden="true">
+      <span class="letter" style="animation-delay: 600ms">Y</span>
+      <span class="letter" style="animation-delay: 660ms">I</span>
+    </span>
+    <span class="word" aria-hidden="true">
+      <span class="letter" style="animation-delay: 800ms">C</span>
+      <span class="letter" style="animation-delay: 860ms">H</span>
+      <span class="letter" style="animation-delay: 920ms">A</span>
+      <span class="letter" style="animation-delay: 980ms">M</span>
+      <span class="letter" style="animation-delay: 1040ms">B</span>
+      <span class="letter" style="animation-delay: 1100ms">E</span>
+      <span class="letter" style="animation-delay: 1160ms">R</span>
+    </span>
+  </h1>
 
-      <div class="hero__seal" aria-hidden="true">易 室</div>
+  <div class="hero__seal" aria-hidden="true">易 室</div>
 
-      <div class="hero__rule" aria-hidden="true"></div>
+  <div class="hero__rule" aria-hidden="true"></div>
 
-      <p class="hero__statement">
-        The first sound architecture in the world built on the three-thousand-year-old structure of the <em>Yi Jing</em>.
-      </p>
+  <p class="hero__statement">
+    The first sound architecture in the world built on the three-thousand-year-old structure of the <em>Yi Jing</em>.
+  </p>
 
-      <div class="hero__cta-wrap">
-        <a href="#what" class="hero__cta">
-          <span>Enter the Chamber</span>
-          <span class="hero__cta-arrow" aria-hidden="true"></span>
-        </a>
-      </div>
-    </div>
+  <div class="hero__cta-wrap">
+    <a href="#what" class="hero__cta">
+      <span>Enter the Chamber</span>
+      <span class="hero__cta-arrow" aria-hidden="true"></span>
+    </a>
+  </div>
+</div>
+```
+
 </main>
 
-
-    <footer class="hero__footer">
-      <div class="hero__location">
-        <strong>Hoi An</strong>
-        Vietnam &middot; private membership
-      </div>
-      <a href="#what" class="hero__scroll" aria-label="Scroll to begin">
-        <span>Begin</span>
-        <span class="hero__scroll-line" aria-hidden="true"></span>
-      </a>
-      <div class="hero__edition">
-        <strong>MMXXVI</strong>
-        Founding edition
-      </div>
-    </footer>
+```
+<footer class="hero__footer">
+  <div class="hero__location">
+    <strong>Hoi An</strong>
+    Vietnam &middot; private membership
+  </div>
+  <a href="#what" class="hero__scroll" aria-label="Scroll to begin">
+    <span>Begin</span>
+    <span class="hero__scroll-line" aria-hidden="true"></span>
+  </a>
+  <div class="hero__edition">
+    <strong>MMXXVI</strong>
+    Founding edition
+  </div>
+</footer>
+```
 
   </div>
 </section>
@@ -1391,106 +1421,114 @@ a { color: inherit; text-decoration: none; }
 <!-- ============================================================
      SECTION 2 — WHAT IT IS
      ============================================================ -->
+
 <section id="what" class="section s2">
   <div class="grain"></div>
   <div class="section__inner">
 
-    <div class="s2__header reveal">
-      <div class="section__overline">Section I &middot; The Chamber</div>
-      <h2 class="section__title">A structured acoustic ritual, <em>calibrated</em> against the nervous system &mdash; and grounded in the oldest map of human situation ever written.</h2>
-      <p class="section__lede">Not wellness. Not meditation. A precise instrument built from three components, none of which is decorative.</p>
+```
+<div class="s2__header reveal">
+  <div class="section__overline">Section I &middot; The Chamber</div>
+  <h2 class="section__title">A structured acoustic ritual, <em>calibrated</em> against the nervous system &mdash; and grounded in the oldest map of human situation ever written.</h2>
+  <p class="section__lede">Not wellness. Not meditation. A precise instrument built from three components, none of which is decorative.</p>
+</div>
+
+<div class="s2__grid">
+
+  <article class="s2__card reveal">
+    <div class="s2__card-image">
+      <img src="assets/images/s2-yijing.webp" alt="An open Yi Jing showing the eight trigrams, with antique Chinese coins and a calligraphic brush on a dark teak table." loading="lazy" />
     </div>
+    <div class="s2__card-number">I &middot; The Map</div>
+    <h3 class="s2__card-title">Yi Jing<span class="s2__card-title-cjk">易 經</span></h3>
+    <p class="s2__card-body">The three-thousand-year-old Chinese Book of Changes. Sixty-four hexagrams that map every possible human situation. Studied by Confucius, Leibniz, Jung, Niels Bohr. Yi Chamber takes this map and grounds it in sound.</p>
+  </article>
 
-    <div class="s2__grid">
-
-      <article class="s2__card reveal">
-        <div class="s2__card-image">
-          <img src="assets/images/s2-yijing.webp" alt="An open Yi Jing showing the eight trigrams, with antique Chinese coins and a calligraphic brush on a dark teak table." loading="lazy" />
-        </div>
-        <div class="s2__card-number">I &middot; The Map</div>
-        <h3 class="s2__card-title">Yi Jing<span class="s2__card-title-cjk">易 經</span></h3>
-        <p class="s2__card-body">The three-thousand-year-old Chinese Book of Changes. Sixty-four hexagrams that map every possible human situation. Studied by Confucius, Leibniz, Jung, Niels Bohr. Yi Chamber takes this map and grounds it in sound.</p>
-      </article>
-
-      <article class="s2__card reveal reveal--delay-1">
-        <div class="s2__card-image">
-          <img src="assets/images/s2-sound.webp" alt="Macro view of a bronze singing bowl rim with concentric resonance ripples visible on the water surface." loading="lazy" />
-        </div>
-        <div class="s2__card-number">II &middot; The Instrument</div>
-        <h3 class="s2__card-title">Sound Architecture<span class="s2__card-title-cjk">聲 律</span></h3>
-        <p class="s2__card-body">Eight trigrams, eight calibrated frequencies. Each chosen for its specific physiological effect on the autonomic nervous system. The lower trigram is delivered below; the upper is delivered above. The body traverses what the hexagram describes.</p>
-      </article>
-
-      <article class="s2__card reveal reveal--delay-2">
-        <div class="s2__card-image">
-          <img src="assets/images/s2-nervous.webp" alt="An 18th-century-style anatomical illustration of the vagus nerve on aged rice paper, beside a brass tuning fork." loading="lazy" />
-        </div>
-        <div class="s2__card-number">III &middot; The Receiver</div>
-        <h3 class="s2__card-title">Nervous System<span class="s2__card-title-cjk">迷 走 神 經</span></h3>
-        <p class="s2__card-body">The body keeps the score &mdash; but the body also keeps the resonance. Yi Chamber's protocol is informed by polyvagal theory and the work of Bessel van der Kolk. Not relaxation. Rehabilitation.</p>
-      </article>
-
+  <article class="s2__card reveal reveal--delay-1">
+    <div class="s2__card-image">
+      <img src="assets/images/s2-sound.webp" alt="Macro view of a bronze singing bowl rim with concentric resonance ripples visible on the water surface." loading="lazy" />
     </div>
+    <div class="s2__card-number">II &middot; The Instrument</div>
+    <h3 class="s2__card-title">Sound Architecture<span class="s2__card-title-cjk">聲 律</span></h3>
+    <p class="s2__card-body">Eight trigrams, eight calibrated frequencies. Each chosen for its specific physiological effect on the autonomic nervous system. The lower trigram is delivered below; the upper is delivered above. The body traverses what the hexagram describes.</p>
+  </article>
+
+  <article class="s2__card reveal reveal--delay-2">
+    <div class="s2__card-image">
+      <img src="assets/images/s2-nervous.webp" alt="An 18th-century-style anatomical illustration of the vagus nerve on aged rice paper, beside a brass tuning fork." loading="lazy" />
+    </div>
+    <div class="s2__card-number">III &middot; The Receiver</div>
+    <h3 class="s2__card-title">Nervous System<span class="s2__card-title-cjk">迷 走 神 經</span></h3>
+    <p class="s2__card-body">The body keeps the score &mdash; but the body also keeps the resonance. Yi Chamber's protocol is informed by polyvagal theory and the work of Bessel van der Kolk. Not relaxation. Rehabilitation.</p>
+  </article>
+
+</div>
+```
+
   </div>
 </section>
 
 <!-- ============================================================
      SECTION 3 — THE JOURNEY (DESCENT)
      ============================================================ -->
+
 <section id="journey" class="section s3">
   <div class="section__inner">
 
-    <div class="s3__header reveal">
-      <div class="section__overline">Section II &middot; The Journey</div>
-      <h2 class="section__title">A descent, then an ascent. <em>One hundred and ten minutes.</em></h2>
-      <p class="section__lede">Three rooms. The website itself is a rehearsal of the ritual &mdash; scroll down to descend, scroll on to rise.</p>
+```
+<div class="s3__header reveal">
+  <div class="section__overline">Section II &middot; The Journey</div>
+  <h2 class="section__title">A descent, then an ascent. <em>One hundred and ten minutes.</em></h2>
+  <p class="section__lede">Three rooms. The website itself is a rehearsal of the ritual &mdash; scroll down to descend, scroll on to rise.</p>
+</div>
+
+<div class="s3__panels">
+
+  <!-- Panel 1 — Yarrow Room -->
+  <article class="s3__panel s3__panel--dark reveal">
+    <div class="s3__panel-image">
+      <img src="assets/images/s3-yarrow.webp" alt="A black-lacquered Vietnamese table beneath a brass pendant lamp, with a rice-paper scroll, calligraphy brush, yarrow stalks, and Chinese coins." loading="lazy" />
     </div>
-
-    <div class="s3__panels">
-
-      <!-- Panel 1 — Yarrow Room -->
-      <article class="s3__panel s3__panel--dark reveal">
-        <div class="s3__panel-image">
-          <img src="assets/images/s3-yarrow.webp" alt="A black-lacquered Vietnamese table beneath a brass pendant lamp, with a rice-paper scroll, calligraphy brush, yarrow stalks, and Chinese coins." loading="lazy" />
-        </div>
-        <div class="s3__panel-text">
-          <div class="s3__panel-step">I &middot; Threshold</div>
-          <h3 class="s3__panel-title">The Yarrow Room</h3>
-          <span class="s3__panel-title-cjk">蓍 草 室</span>
-          <p class="s3__panel-body">Before the chamber, a small intimate room. The yarrow stalks are cast, the hexagram is drawn, the brush moves once. You learn which of the sixty-four situations is yours tonight. The descent begins not in sound, but in writing.</p>
-          <blockquote class="s3__panel-quote">"Confucius is said to have worn out three sets of leather binding strips studying it."</blockquote>
-        </div>
-      </article>
-
-      <!-- Panel 2 — Lower Chamber -->
-      <article class="s3__panel s3__panel--reverse s3__panel--dark reveal">
-        <div class="s3__panel-image">
-          <img src="assets/images/s3-lower.webp" alt="The Lower Chamber: an immersive sound room with deep ochre clay walls, dark teak posts, candle-lit niches and a single bowl on a stone plinth." loading="lazy" />
-        </div>
-        <div class="s3__panel-text">
-          <div class="s3__panel-step">II &middot; Descent</div>
-          <h3 class="s3__panel-title">The Lower Chamber</h3>
-          <span class="s3__panel-title-cjk">下 卦 室</span>
-          <p class="s3__panel-body">Deep ochre clay-plaster walls, dark teak posts, beeswax-candle light. Here the lower trigram is delivered &mdash; the inner state. Low frequencies engage the ventral vagal complex through direct mechanoreceptor stimulation. The body remembers gravity.</p>
-          <blockquote class="s3__panel-quote">"Earth · 64&nbsp;Hz &middot; Mountain · 128&nbsp;Hz &middot; Water · 256&nbsp;Hz &middot; Wind · 384&nbsp;Hz"</blockquote>
-        </div>
-      </article>
-
-      <!-- Panel 3 — Upper Chamber -->
-      <article class="s3__panel s3__panel--light reveal">
-        <div class="s3__panel-image">
-          <img src="assets/images/s3-upper.webp" alt="The Upper Chamber: an airy elevated room with full-height windows overlooking river and jungle, white lime-plaster walls, bronze and quartz crystal bowls on a rug, calligraphy on the wall." loading="lazy" />
-        </div>
-        <div class="s3__panel-text">
-          <div class="s3__panel-step">III &middot; Ascent</div>
-          <h3 class="s3__panel-title">The Upper Chamber</h3>
-          <span class="s3__panel-title-cjk">上 卦 室</span>
-          <p class="s3__panel-body">Three full-height windows, lime-plaster walls, morning light through bamboo blinds. Quartz crystal bowls on a single antique rug. Here the upper trigram is delivered &mdash; the trajectory, the relational field. The body learns what air feels like.</p>
-          <blockquote class="s3__panel-quote">"Thunder · 432&nbsp;Hz &middot; Fire · 528&nbsp;Hz &middot; Lake · 639&nbsp;Hz &middot; Heaven · 963&nbsp;Hz"</blockquote>
-        </div>
-      </article>
-
+    <div class="s3__panel-text">
+      <div class="s3__panel-step">I &middot; Threshold</div>
+      <h3 class="s3__panel-title">The Yarrow Room</h3>
+      <span class="s3__panel-title-cjk">蓍 草 室</span>
+      <p class="s3__panel-body">Before the chamber, a small intimate room. The yarrow stalks are cast, the hexagram is drawn, the brush moves once. You learn which of the sixty-four situations is yours tonight. The descent begins not in sound, but in writing.</p>
+      <blockquote class="s3__panel-quote">"Confucius is said to have worn out three sets of leather binding strips studying it."</blockquote>
     </div>
+  </article>
+
+  <!-- Panel 2 — Lower Chamber -->
+  <article class="s3__panel s3__panel--reverse s3__panel--dark reveal">
+    <div class="s3__panel-image">
+      <img src="assets/images/s3-lower.webp" alt="The Lower Chamber: an immersive sound room with deep ochre clay walls, dark teak posts, candle-lit niches and a single bowl on a stone plinth." loading="lazy" />
+    </div>
+    <div class="s3__panel-text">
+      <div class="s3__panel-step">II &middot; Descent</div>
+      <h3 class="s3__panel-title">The Lower Chamber</h3>
+      <span class="s3__panel-title-cjk">下 卦 室</span>
+      <p class="s3__panel-body">Deep ochre clay-plaster walls, dark teak posts, beeswax-candle light. Here the lower trigram is delivered &mdash; the inner state. Low frequencies engage the ventral vagal complex through direct mechanoreceptor stimulation. The body remembers gravity.</p>
+      <blockquote class="s3__panel-quote">"Earth · 64&nbsp;Hz &middot; Mountain · 128&nbsp;Hz &middot; Water · 256&nbsp;Hz &middot; Wind · 384&nbsp;Hz"</blockquote>
+    </div>
+  </article>
+
+  <!-- Panel 3 — Upper Chamber -->
+  <article class="s3__panel s3__panel--light reveal">
+    <div class="s3__panel-image">
+      <img src="assets/images/s3-upper.webp" alt="The Upper Chamber: an airy elevated room with full-height windows overlooking river and jungle, white lime-plaster walls, bronze and quartz crystal bowls on a rug, calligraphy on the wall." loading="lazy" />
+    </div>
+    <div class="s3__panel-text">
+      <div class="s3__panel-step">III &middot; Ascent</div>
+      <h3 class="s3__panel-title">The Upper Chamber</h3>
+      <span class="s3__panel-title-cjk">上 卦 室</span>
+      <p class="s3__panel-body">Three full-height windows, lime-plaster walls, morning light through bamboo blinds. Quartz crystal bowls on a single antique rug. Here the upper trigram is delivered &mdash; the trajectory, the relational field. The body learns what air feels like.</p>
+      <blockquote class="s3__panel-quote">"Thunder · 432&nbsp;Hz &middot; Fire · 528&nbsp;Hz &middot; Lake · 639&nbsp;Hz &middot; Heaven · 963&nbsp;Hz"</blockquote>
+    </div>
+  </article>
+
+</div>
+```
+
   </div>
 </section>
 
@@ -1498,149 +1536,156 @@ a { color: inherit; text-decoration: none; }
      SECTION 4 — THE BOWLS / 8 FREQUENCIES
      (placeholder gradients until Prompt 09-16 images arrive)
      ============================================================ -->
+
 <section id="bowls" class="section s4">
   <div class="grain"></div>
   <div class="section__inner">
 
-    <div class="s4__header reveal">
-      <div class="section__overline">Section III &middot; The Frequencies</div>
-      <h2 class="section__title">Eight trigrams. <em>Eight bowls.</em> Eight calibrated frequencies.</h2>
-      <p class="section__lede">Each frequency is chosen for a specific neurophysiological effect. Together they describe the full range from grounding to clarity, from earth to heaven.</p>
+```
+<div class="s4__header reveal">
+  <div class="section__overline">Section III &middot; The Frequencies</div>
+  <h2 class="section__title">Eight trigrams. <em>Eight bowls.</em> Eight calibrated frequencies.</h2>
+  <p class="section__lede">Each frequency is chosen for a specific neurophysiological effect. Together they describe the full range from grounding to clarity, from earth to heaven.</p>
+</div>
+
+<div class="s4__grid">
+
+  <article class="s4__cell s4__cell--earth reveal">
+    <img src="assets/images/bowl-01-earth.webp" alt="Earth bowl (Kun, 64 Hz) — a warm patinated bronze-clay bowl on ochre stone tile." loading="lazy" />
+    <span class="s4__cell-pos">01</span>
+    <div class="s4__cell-overlay">
+      <span class="s4__cell-trigram">☷</span>
+      <h3 class="s4__cell-name">Earth <span class="s4__cell-name-cjk">坤</span></h3>
+      <div class="s4__cell-freq">64 Hz &middot; Kun</div>
     </div>
+  </article>
 
-    <div class="s4__grid">
-
-      <article class="s4__cell s4__cell--earth reveal">
-        <img src="assets/images/bowl-01-earth.webp" alt="Earth bowl (Kun, 64 Hz) — a warm patinated bronze-clay bowl on ochre stone tile." loading="lazy" />
-        <span class="s4__cell-pos">01</span>
-        <div class="s4__cell-overlay">
-          <span class="s4__cell-trigram">☷</span>
-          <h3 class="s4__cell-name">Earth <span class="s4__cell-name-cjk">坤</span></h3>
-          <div class="s4__cell-freq">64 Hz &middot; Kun</div>
-        </div>
-      </article>
-
-      <article class="s4__cell s4__cell--mountain reveal reveal--delay-1">
-        <img src="assets/images/bowl-02-mountain.webp" alt="Mountain bowl (Gen, 128 Hz) — a stone-bodied bowl on granite, cool morning fog." loading="lazy" />
-        <span class="s4__cell-pos">02</span>
-        <div class="s4__cell-overlay">
-          <span class="s4__cell-trigram">☶</span>
-          <h3 class="s4__cell-name">Mountain <span class="s4__cell-name-cjk">艮</span></h3>
-          <div class="s4__cell-freq">128 Hz &middot; Gen</div>
-        </div>
-      </article>
-
-      <article class="s4__cell s4__cell--water reveal reveal--delay-2">
-        <img src="assets/images/bowl-03-water.webp" alt="Water bowl (Kan, 256 Hz) — a dark bronze bowl with still water reflecting a single overhead light." loading="lazy" />
-        <span class="s4__cell-pos">03</span>
-        <div class="s4__cell-overlay">
-          <span class="s4__cell-trigram">☵</span>
-          <h3 class="s4__cell-name">Water <span class="s4__cell-name-cjk">坎</span></h3>
-          <div class="s4__cell-freq">256 Hz &middot; Kan</div>
-        </div>
-      </article>
-
-      <article class="s4__cell s4__cell--wind reveal reveal--delay-3">
-        <img src="assets/images/bowl-04-wind.webp" alt="Wind bowl (Xun, 384 Hz) — a pale celadon ceramic bowl on linen, dried grass leaning against it." loading="lazy" />
-        <span class="s4__cell-pos">04</span>
-        <div class="s4__cell-overlay">
-          <span class="s4__cell-trigram">☴</span>
-          <h3 class="s4__cell-name">Wind <span class="s4__cell-name-cjk">巽</span></h3>
-          <div class="s4__cell-freq">384 Hz &middot; Xun</div>
-        </div>
-      </article>
-
-      <article class="s4__cell s4__cell--thunder reveal">
-        <img src="assets/images/bowl-05-thunder.webp" alt="Thunder bowl (Zhen, 432 Hz) — a burnished gold-bronze bowl on slate with a sharp diagonal light strike." loading="lazy" />
-        <span class="s4__cell-pos">05</span>
-        <div class="s4__cell-overlay">
-          <span class="s4__cell-trigram">☳</span>
-          <h3 class="s4__cell-name">Thunder <span class="s4__cell-name-cjk">震</span></h3>
-          <div class="s4__cell-freq">432 Hz &middot; Zhen</div>
-        </div>
-      </article>
-
-      <article class="s4__cell s4__cell--fire reveal reveal--delay-1">
-        <img src="assets/images/bowl-06-fire.webp" alt="Fire bowl (Li, 528 Hz) — a copper bowl on terracotta tile with warm diagonal light." loading="lazy" />
-        <span class="s4__cell-pos">06</span>
-        <div class="s4__cell-overlay">
-          <span class="s4__cell-trigram">☲</span>
-          <h3 class="s4__cell-name">Fire <span class="s4__cell-name-cjk">離</span></h3>
-          <div class="s4__cell-freq">528 Hz &middot; Li</div>
-        </div>
-      </article>
-
-      <article class="s4__cell s4__cell--lake reveal reveal--delay-2">
-        <img src="assets/images/bowl-07-lake.webp" alt="Lake bowl (Dui, 639 Hz) — a silver-finish bowl with water droplets on its surface, resting on pale linen." loading="lazy" />
-        <span class="s4__cell-pos">07</span>
-        <div class="s4__cell-overlay">
-          <span class="s4__cell-trigram">☱</span>
-          <h3 class="s4__cell-name">Lake <span class="s4__cell-name-cjk">兌</span></h3>
-          <div class="s4__cell-freq">639 Hz &middot; Dui</div>
-        </div>
-      </article>
-
-      <article class="s4__cell s4__cell--heaven reveal reveal--delay-3">
-        <img src="assets/images/bowl-08-heaven.webp" alt="Heaven bowl (Qian, 963 Hz) — a luminous quartz crystal bowl with a brass rim in high-key morning light." loading="lazy" />
-        <span class="s4__cell-pos">08</span>
-        <div class="s4__cell-overlay">
-          <span class="s4__cell-trigram">☰</span>
-          <h3 class="s4__cell-name">Heaven <span class="s4__cell-name-cjk">乾</span></h3>
-          <div class="s4__cell-freq">963 Hz &middot; Qian</div>
-        </div>
-      </article>
-
+  <article class="s4__cell s4__cell--mountain reveal reveal--delay-1">
+    <img src="assets/images/bowl-02-mountain.webp" alt="Mountain bowl (Gen, 128 Hz) — a stone-bodied bowl on granite, cool morning fog." loading="lazy" />
+    <span class="s4__cell-pos">02</span>
+    <div class="s4__cell-overlay">
+      <span class="s4__cell-trigram">☶</span>
+      <h3 class="s4__cell-name">Mountain <span class="s4__cell-name-cjk">艮</span></h3>
+      <div class="s4__cell-freq">128 Hz &middot; Gen</div>
     </div>
+  </article>
+
+  <article class="s4__cell s4__cell--water reveal reveal--delay-2">
+    <img src="assets/images/bowl-03-water.webp" alt="Water bowl (Kan, 256 Hz) — a dark bronze bowl with still water reflecting a single overhead light." loading="lazy" />
+    <span class="s4__cell-pos">03</span>
+    <div class="s4__cell-overlay">
+      <span class="s4__cell-trigram">☵</span>
+      <h3 class="s4__cell-name">Water <span class="s4__cell-name-cjk">坎</span></h3>
+      <div class="s4__cell-freq">256 Hz &middot; Kan</div>
+    </div>
+  </article>
+
+  <article class="s4__cell s4__cell--wind reveal reveal--delay-3">
+    <img src="assets/images/bowl-04-wind.webp" alt="Wind bowl (Xun, 384 Hz) — a pale celadon ceramic bowl on linen, dried grass leaning against it." loading="lazy" />
+    <span class="s4__cell-pos">04</span>
+    <div class="s4__cell-overlay">
+      <span class="s4__cell-trigram">☴</span>
+      <h3 class="s4__cell-name">Wind <span class="s4__cell-name-cjk">巽</span></h3>
+      <div class="s4__cell-freq">384 Hz &middot; Xun</div>
+    </div>
+  </article>
+
+  <article class="s4__cell s4__cell--thunder reveal">
+    <img src="assets/images/bowl-05-thunder.webp" alt="Thunder bowl (Zhen, 432 Hz) — a burnished gold-bronze bowl on slate with a sharp diagonal light strike." loading="lazy" />
+    <span class="s4__cell-pos">05</span>
+    <div class="s4__cell-overlay">
+      <span class="s4__cell-trigram">☳</span>
+      <h3 class="s4__cell-name">Thunder <span class="s4__cell-name-cjk">震</span></h3>
+      <div class="s4__cell-freq">432 Hz &middot; Zhen</div>
+    </div>
+  </article>
+
+  <article class="s4__cell s4__cell--fire reveal reveal--delay-1">
+    <img src="assets/images/bowl-06-fire.webp" alt="Fire bowl (Li, 528 Hz) — a copper bowl on terracotta tile with warm diagonal light." loading="lazy" />
+    <span class="s4__cell-pos">06</span>
+    <div class="s4__cell-overlay">
+      <span class="s4__cell-trigram">☲</span>
+      <h3 class="s4__cell-name">Fire <span class="s4__cell-name-cjk">離</span></h3>
+      <div class="s4__cell-freq">528 Hz &middot; Li</div>
+    </div>
+  </article>
+
+  <article class="s4__cell s4__cell--lake reveal reveal--delay-2">
+    <img src="assets/images/bowl-07-lake.webp" alt="Lake bowl (Dui, 639 Hz) — a silver-finish bowl with water droplets on its surface, resting on pale linen." loading="lazy" />
+    <span class="s4__cell-pos">07</span>
+    <div class="s4__cell-overlay">
+      <span class="s4__cell-trigram">☱</span>
+      <h3 class="s4__cell-name">Lake <span class="s4__cell-name-cjk">兌</span></h3>
+      <div class="s4__cell-freq">639 Hz &middot; Dui</div>
+    </div>
+  </article>
+
+  <article class="s4__cell s4__cell--heaven reveal reveal--delay-3">
+    <img src="assets/images/bowl-08-heaven.webp" alt="Heaven bowl (Qian, 963 Hz) — a luminous quartz crystal bowl with a brass rim in high-key morning light." loading="lazy" />
+    <span class="s4__cell-pos">08</span>
+    <div class="s4__cell-overlay">
+      <span class="s4__cell-trigram">☰</span>
+      <h3 class="s4__cell-name">Heaven <span class="s4__cell-name-cjk">乾</span></h3>
+      <div class="s4__cell-freq">963 Hz &middot; Qian</div>
+    </div>
+  </article>
+
+</div>
+```
+
   </div>
 </section>
 
 <!-- ============================================================
      SECTION 5 — THE RITUAL (110 min)
      ============================================================ -->
+
 <section id="ritual" class="section s5">
   <div class="section__inner">
 
-    <div class="s5__header reveal">
-      <div class="section__overline">Section IV &middot; The Ritual</div>
-      <h2 class="section__title">One hundred and ten minutes. <em>Six phases.</em></h2>
-      <p class="section__lede">A single session, structured. The duration is not chosen arbitrarily &mdash; it is the time the autonomic nervous system requires to complete a full down-regulation cycle.</p>
-    </div>
+```
+<div class="s5__header reveal">
+  <div class="section__overline">Section IV &middot; The Ritual</div>
+  <h2 class="section__title">One hundred and ten minutes. <em>Six phases.</em></h2>
+  <p class="section__lede">A single session, structured. The duration is not chosen arbitrarily &mdash; it is the time the autonomic nervous system requires to complete a full down-regulation cycle.</p>
+</div>
 
-    <div class="s5__timeline reveal">
-      <div class="s5__axis" aria-hidden="true"></div>
-      <div class="s5__phases">
-        <div class="s5__phase">
-          <div class="s5__phase-time">0 — 15</div>
-          <h3 class="s5__phase-title">Arrival</h3>
-          <p class="s5__phase-body">Threshold, tea, removal of the day.</p>
-        </div>
-        <div class="s5__phase">
-          <div class="s5__phase-time">15 — 35</div>
-          <h3 class="s5__phase-title">Yarrow Room</h3>
-          <p class="s5__phase-body">The hexagram is cast. The brush moves.</p>
-        </div>
-        <div class="s5__phase">
-          <div class="s5__phase-time">35 — 60</div>
-          <h3 class="s5__phase-title">Lower Chamber</h3>
-          <p class="s5__phase-body">The lower trigram. Descent into the inner state.</p>
-        </div>
-        <div class="s5__phase">
-          <div class="s5__phase-time">60 — 65</div>
-          <h3 class="s5__phase-title">Transition</h3>
-          <p class="s5__phase-body">The corridor between. Water on the hands.</p>
-        </div>
-        <div class="s5__phase">
-          <div class="s5__phase-time">65 — 95</div>
-          <h3 class="s5__phase-title">Upper Chamber</h3>
-          <p class="s5__phase-body">The upper trigram. Ascent into the trajectory.</p>
-        </div>
-        <div class="s5__phase">
-          <div class="s5__phase-time">95 — 110</div>
-          <h3 class="s5__phase-title">Integration</h3>
-          <p class="s5__phase-body">The Yi Bar. The session does not end &mdash; it settles.</p>
-        </div>
-      </div>
+<div class="s5__timeline reveal">
+  <div class="s5__axis" aria-hidden="true"></div>
+  <div class="s5__phases">
+    <div class="s5__phase">
+      <div class="s5__phase-time">0 — 15</div>
+      <h3 class="s5__phase-title">Arrival</h3>
+      <p class="s5__phase-body">Threshold, tea, removal of the day.</p>
     </div>
+    <div class="s5__phase">
+      <div class="s5__phase-time">15 — 35</div>
+      <h3 class="s5__phase-title">Yarrow Room</h3>
+      <p class="s5__phase-body">The hexagram is cast. The brush moves.</p>
+    </div>
+    <div class="s5__phase">
+      <div class="s5__phase-time">35 — 60</div>
+      <h3 class="s5__phase-title">Lower Chamber</h3>
+      <p class="s5__phase-body">The lower trigram. Descent into the inner state.</p>
+    </div>
+    <div class="s5__phase">
+      <div class="s5__phase-time">60 — 65</div>
+      <h3 class="s5__phase-title">Transition</h3>
+      <p class="s5__phase-body">The corridor between. Water on the hands.</p>
+    </div>
+    <div class="s5__phase">
+      <div class="s5__phase-time">65 — 95</div>
+      <h3 class="s5__phase-title">Upper Chamber</h3>
+      <p class="s5__phase-body">The upper trigram. Ascent into the trajectory.</p>
+    </div>
+    <div class="s5__phase">
+      <div class="s5__phase-time">95 — 110</div>
+      <h3 class="s5__phase-title">Integration</h3>
+      <p class="s5__phase-body">The Yi Bar. The session does not end &mdash; it settles.</p>
+    </div>
+  </div>
+</div>
+```
 
   </div>
 </section>
@@ -1648,22 +1693,26 @@ a { color: inherit; text-decoration: none; }
 <!-- ============================================================
      SECTION 6 — YI BAR
      ============================================================ -->
+
 <section id="bar" class="section s6">
   <div class="section__inner s6__inner">
 
-    <div class="s6__text reveal">
-      <div class="section__overline">Section V &middot; The Bar</div>
-      <h2 class="section__title">The session does not end. <em>It settles.</em></h2>
-      <p class="section__lede">After the chambers, the Yi Bar. Sixty-four beverages, each paired with a hexagram. Built around traditional Vietnamese tea-house principles, with house-made infusions, tinctures, and one slow cocktail at the end.</p>
-      <p class="section__lede" style="font-style: normal; font-family: var(--font-body); font-size: 0.95rem; color: var(--bone);">Bitter, sweet, salt, sour, umami, mineral &mdash; the five tastes mapped to the five elements, the elements mapped to the trigrams, the trigrams paired in your hexagram. The bar reads your reading.</p>
-    </div>
+```
+<div class="s6__text reveal">
+  <div class="section__overline">Section V &middot; The Bar</div>
+  <h2 class="section__title">The session does not end. <em>It settles.</em></h2>
+  <p class="section__lede">After the chambers, the Yi Bar. Sixty-four beverages, each paired with a hexagram. Built around traditional Vietnamese tea-house principles, with house-made infusions, tinctures, and one slow cocktail at the end.</p>
+  <p class="section__lede" style="font-style: normal; font-family: var(--font-body); font-size: 0.95rem; color: var(--bone);">Bitter, sweet, salt, sour, umami, mineral &mdash; the five tastes mapped to the five elements, the elements mapped to the trigrams, the trigrams paired in your hexagram. The bar reads your reading.</p>
+</div>
 
-    <div class="s6__visual reveal reveal--delay-1" aria-hidden="true">
-      <div style="position: absolute; bottom: 2rem; left: 2rem; right: 2rem;">
-        <div class="s6__count">64</div>
-        <div class="s6__count-meta">Beverages &middot; Hexagrams</div>
-      </div>
-    </div>
+<div class="s6__visual reveal reveal--delay-1" aria-hidden="true">
+  <svg class="s6__bagua" viewBox="-100 -100 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="0" cy="0" r="72" fill="none" stroke="#6B5D45" stroke-width="0.4" stroke-dasharray="2 3" opacity="0.4"/><text x="0" y="-2" text-anchor="middle" font-family="Noto Serif TC, serif" font-size="14" fill="#9C7B3C" opacity="0.7" letter-spacing="3">易 室</text><text x="0" y="14" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="5" fill="#9C7B3C" opacity="0.5" letter-spacing="3">YI SHI</text><g transform="translate(0.0,-72.0)"><line x1="-12" y1="12" x2="12" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="6" x2="12" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="0" x2="12" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/></g><g transform="translate(50.9,-50.9)"><line x1="-12" y1="12" x2="12" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="6" x2="12" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="0" x2="-3" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="0" x2="12" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/></g><g transform="translate(72.0,0.0)"><line x1="-12" y1="12" x2="-3" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="12" x2="12" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="6" x2="12" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="0" x2="-3" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="0" x2="12" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/></g><g transform="translate(50.9,50.9)"><line x1="-12" y1="12" x2="12" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="6" x2="-3" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="6" x2="12" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="0" x2="-3" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="0" x2="12" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/></g><g transform="translate(0.0,72.0)"><line x1="-12" y1="12" x2="-3" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="12" x2="12" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="6" x2="-3" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="6" x2="12" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="0" x2="-3" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="0" x2="12" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/></g><g transform="translate(-50.9,50.9)"><line x1="-12" y1="12" x2="-3" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="12" x2="12" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="6" x2="12" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="0" x2="12" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/></g><g transform="translate(-72.0,0.0)"><line x1="-12" y1="12" x2="12" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="6" x2="-3" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="6" x2="12" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="0" x2="12" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/></g><g transform="translate(-50.9,-50.9)"><line x1="-12" y1="12" x2="-3" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="12" x2="12" y2="12" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="6" x2="-3" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="3" y1="6" x2="12" y2="6" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/><line x1="-12" y1="0" x2="12" y2="0" stroke="#9C7B3C" stroke-width="2.5" stroke-linecap="round"/></g></svg>
+  <div class="s6__count-wrap">
+    <div class="s6__count">64</div>
+    <div class="s6__count-meta">Beverages &middot; Hexagrams</div>
+  </div>
+</div>
+```
 
   </div>
 </section>
@@ -1671,61 +1720,64 @@ a { color: inherit; text-decoration: none; }
 <!-- ============================================================
      SECTION 7 — COUNCIL OF TEN
      ============================================================ -->
+
 <section id="council" class="section s7">
   <div class="section__inner">
 
-    <div class="s7__header reveal">
-      <div class="section__overline">Section VI &middot; The Council</div>
-      <h2 class="section__title">The Council of Ten.<br/><em>Founding members of Yi Chamber.</em></h2>
-      <p class="section__lede">Yi Chamber opens with ten founding seats. After the Council closes, the membership tiers open to the wider circle. Founding seats close once filled and do not reopen.</p>
-    </div>
+```
+<div class="s7__header reveal">
+  <div class="section__overline">Section VI &middot; The Council</div>
+  <h2 class="section__title">The Council of Ten.<br/><em>Founding members of Yi Chamber.</em></h2>
+  <p class="section__lede">Yi Chamber opens with ten founding seats. After the Council closes, the membership tiers open to the wider circle. Founding seats close once filled and do not reopen.</p>
+</div>
 
-    <div class="s7__circle reveal" aria-hidden="true">
-      <!-- 10 dots arranged in a circle, with the 易室 seal in center -->
-      <svg class="s7__circle-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="100" cy="100" r="78" fill="none" stroke="#6B5D45" stroke-width="0.4" stroke-dasharray="2 3" opacity="0.4"/>
-        <!-- 10 dots, evenly distributed -->
-        <g fill="#9C7B3C">
-          <!-- positions calculated: angle = i * 36 degrees, starting from top -->
-          <circle cx="100" cy="22" r="4"/>
-          <circle cx="174.2" cy="76.0" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
-          <circle cx="145.8" cy="163.6" r="4"/>
-          <circle cx="54.2" cy="163.6" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
-          <circle cx="25.8" cy="76.0" r="4"/>
-          <circle cx="129.0" cy="29.2" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
-          <circle cx="171.0" cy="123.5" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
-          <circle cx="100" cy="178" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
-          <circle cx="29.0" cy="123.5" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
-          <circle cx="71.0" cy="29.2" r="4"/>
-        </g>
-      </svg>
-      <div class="s7__circle-center">易 室</div>
-    </div>
+<div class="s7__circle reveal" aria-hidden="true">
+  <!-- 10 dots arranged in a circle, with the 易室 seal in center -->
+  <svg class="s7__circle-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="78" fill="none" stroke="#6B5D45" stroke-width="0.4" stroke-dasharray="2 3" opacity="0.4"/>
+    <!-- 10 dots, evenly distributed -->
+    <g fill="#9C7B3C">
+      <!-- positions calculated: angle = i * 36 degrees, starting from top -->
+      <circle cx="100" cy="22" r="4"/>
+      <circle cx="174.2" cy="76.0" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
+      <circle cx="145.8" cy="163.6" r="4"/>
+      <circle cx="54.2" cy="163.6" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
+      <circle cx="25.8" cy="76.0" r="4"/>
+      <circle cx="129.0" cy="29.2" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
+      <circle cx="171.0" cy="123.5" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
+      <circle cx="100" cy="178" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
+      <circle cx="29.0" cy="123.5" r="4" fill="none" stroke="#9C7B3C" stroke-width="0.8"/>
+      <circle cx="71.0" cy="29.2" r="4"/>
+    </g>
+  </svg>
+  <div class="s7__circle-center">易 室</div>
+</div>
 
-    <div class="s7__tiers">
-      <article class="s7__tier reveal">
-        <div class="s7__tier-count">2</div>
-        <div class="s7__tier-name">Founding Patron</div>
-        <div class="s7__tier-price">&euro; 50,000</div>
-      </article>
-      <article class="s7__tier reveal reveal--delay-1">
-        <div class="s7__tier-count">3</div>
-        <div class="s7__tier-name">Founder</div>
-        <div class="s7__tier-price">&euro; 25,000</div>
-      </article>
-      <article class="s7__tier reveal reveal--delay-2">
-        <div class="s7__tier-count">5</div>
-        <div class="s7__tier-name">Co-Founder</div>
-        <div class="s7__tier-price">&euro; 15,000</div>
-      </article>
-    </div>
+<div class="s7__tiers">
+  <article class="s7__tier reveal">
+    <div class="s7__tier-count">2</div>
+    <div class="s7__tier-name">Founding Patron</div>
+    <div class="s7__tier-price">&euro; 50,000</div>
+  </article>
+  <article class="s7__tier reveal reveal--delay-1">
+    <div class="s7__tier-count">3</div>
+    <div class="s7__tier-name">Founder</div>
+    <div class="s7__tier-price">&euro; 25,000</div>
+  </article>
+  <article class="s7__tier reveal reveal--delay-2">
+    <div class="s7__tier-count">5</div>
+    <div class="s7__tier-name">Co-Founder</div>
+    <div class="s7__tier-price">&euro; 15,000</div>
+  </article>
+</div>
 
-    <div class="s7__cta-wrap reveal">
-      <a href="#contact" class="s7__cta">
-        <span>Apply to the Council</span>
-        <span class="hero__cta-arrow" aria-hidden="true"></span>
-      </a>
-    </div>
+<div class="s7__cta-wrap reveal">
+  <a href="#contact" class="s7__cta">
+    <span>Apply to the Council</span>
+    <span class="hero__cta-arrow" aria-hidden="true"></span>
+  </a>
+</div>
+```
 
   </div>
 </section>
@@ -1733,6 +1785,7 @@ a { color: inherit; text-decoration: none; }
 <!-- ============================================================
      SECTION 8 — CLOSING / FOUNDER NOTE
      ============================================================ -->
+
 <section id="contact" class="section s8">
   <div class="section__inner">
     <div class="s8__visual reveal" aria-hidden="true"></div>
@@ -1748,33 +1801,36 @@ a { color: inherit; text-decoration: none; }
 <!-- ============================================================
      FOOTER
      ============================================================ -->
+
 <footer class="footer">
   <div class="footer__inner">
 
-    <div class="footer__col">
-      <div class="footer__brand-name">YI CHAMBER</div>
-      <span class="footer__brand-cjk">易 室</span>
-      <p class="footer__brand-tag">The first sound architecture built on the three-thousand-year-old structure of the Yi Jing.</p>
-    </div>
+```
+<div class="footer__col">
+  <div class="footer__brand-name">YI CHAMBER</div>
+  <span class="footer__brand-cjk">易 室</span>
+  <p class="footer__brand-tag">The first sound architecture built on the three-thousand-year-old structure of the Yi Jing.</p>
+</div>
 
-    <div class="footer__col">
-      <h4>Inquire</h4>
-      <ul>
-        <li><a href="mailto:inquire@yichamber.com">inquire@yichamber.com</a></li>
-        <li><a href="#council">Founding Circle</a></li>
-        <li><a href="#contact">Press &amp; Editorial</a></li>
-      </ul>
-    </div>
+<div class="footer__col">
+  <h4>Inquire</h4>
+  <ul>
+    <li><a href="mailto:inquire@yichamber.com">inquire@yichamber.com</a></li>
+    <li><a href="#council">Founding Circle</a></li>
+    <li><a href="#contact">Press &amp; Editorial</a></li>
+  </ul>
+</div>
 
-    <div class="footer__col">
-      <h4>The Chamber</h4>
-      <ul>
-        <li><a href="#what">What it is</a></li>
-        <li><a href="#journey">The Journey</a></li>
-        <li><a href="#bowls">The Frequencies</a></li>
-        <li><a href="#ritual">The Ritual</a></li>
-      </ul>
-    </div>
+<div class="footer__col">
+  <h4>The Chamber</h4>
+  <ul>
+    <li><a href="#what">What it is</a></li>
+    <li><a href="#journey">The Journey</a></li>
+    <li><a href="#bowls">The Frequencies</a></li>
+    <li><a href="#ritual">The Ritual</a></li>
+  </ul>
+</div>
+```
 
   </div>
 
@@ -1878,5 +1934,6 @@ a { color: inherit; text-decoration: none; }
 })();
 
 </script>
+
 </body>
 </html>
