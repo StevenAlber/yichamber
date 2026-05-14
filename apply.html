@@ -1,0 +1,2314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1A1A1A" />
+<meta name="format-detection" content="telephone=no" />
+
+<title>Apply to the Council · Yi Chamber</title>
+<meta name="description" content="An application to the Council of Ten — the founding members of Yi Chamber. Ten seats. Hoi An, 2026." />
+<meta name="author" content="Steven Alber" />
+<meta name="robots" content="noindex, follow" />
+
+<meta property="og:site_name" content="Yi Chamber" />
+<meta property="og:title" content="Apply to the Council · Yi Chamber" />
+<meta property="og:description" content="Ten seats. Once filled, the Council closes forever." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yichamber.com/apply.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="canonical" href="https://yichamber.com/apply.html" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+/* ========================================================================
+   YI CHAMBER · /apply
+   Master stylesheet
+   ======================================================================== */
+:root {
+  --ink:       #1A1A1A;
+  --ink-deep:  #0F0F0F;
+  --rice:      #F4EFE6;
+  --bone:      #EDE7D9;
+  --brass:     #9C7B3C;
+  --brass-dim: #7A5F2D;
+  --ochre:     #8B5E3C;
+  --jade:      #4A5D4A;
+  --cinnabar:  #8B2E1F;
+  --cinnabar-deep: #6B1F12;
+  --graphite:  #3A3A3A;
+  --patina:    #6B5D45;
+
+  --font-display: 'EB Garamond', Georgia, serif;
+  --font-body:    'IBM Plex Sans', system-ui, sans-serif;
+  --font-cjk:     'Noto Serif TC', 'EB Garamond', serif;
+
+  --ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --section-pad-y: clamp(5rem, 11vw, 8rem);
+  --section-pad-x: clamp(1.5rem, 5vw, 4rem);
+  --content-narrow: 680px;
+  --content-wide:   1100px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--rice);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; height: auto; display: block; }
+::selection { background: var(--brass); color: var(--rice); }
+
+/* Grain texture utility */
+.grain {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.55  0 0 0 0 0.45  0 0 0 0 0.27  0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ========================================================================
+   TOPBAR
+   ======================================================================== */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: clamp(1rem, 2.2vw, 1.6rem) var(--section-pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(244, 239, 230, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(156, 123, 60, 0.15);
+}
+.topbar__back {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.65);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: color 400ms var(--ease);
+}
+.topbar__back:hover { color: var(--brass); }
+.topbar__back-arrow {
+  display: inline-block;
+  width: 16px;
+  height: 1px;
+  background: currentColor;
+  position: relative;
+}
+.topbar__back-arrow::after {
+  content: '';
+  position: absolute;
+  left: 0; top: -3px;
+  width: 7px; height: 7px;
+  border-left: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+.topbar__seal {
+  font-family: var(--font-cjk);
+  font-size: 1.05rem;
+  color: var(--brass);
+  letter-spacing: 0.4em;
+}
+
+@media (max-width: 720px) {
+  .topbar__back span:not(.topbar__back-arrow) { display: none; }
+}
+
+/* ========================================================================
+   HERO / THRESHOLD
+   ======================================================================== */
+.threshold {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 40%, rgba(139, 105, 20, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 100% 80% at 50% 110%, rgba(0,0,0,0.5) 0%, transparent 50%),
+    var(--ink-deep);
+  color: var(--rice);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(7rem, 14vw, 10rem) var(--section-pad-x) clamp(4rem, 8vw, 6rem);
+  isolation: isolate;
+  overflow: hidden;
+}
+.threshold__grain {
+  position: absolute; inset: 0; z-index: 0;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.6  0 0 0 0 0.5  0 0 0 0 0.3  0 0 0 1 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+.threshold__inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--content-narrow);
+  width: 100%;
+}
+.threshold__overline {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  animation: fade-up 1200ms var(--ease-out) 300ms forwards;
+}
+.threshold__overline::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(156, 123, 60, 0.3);
+  max-width: 200px;
+}
+.threshold__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 6vw, 4.4rem);
+  line-height: 1.05;
+  color: var(--rice);
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.01em;
+  opacity: 0;
+  animation: fade-up 1400ms var(--ease-out) 600ms forwards;
+}
+.threshold__title em {
+  font-style: italic;
+  color: var(--brass);
+}
+.threshold__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  line-height: 1.5;
+  color: var(--bone);
+  max-width: 38ch;
+  margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+  opacity: 0;
+  animation: fade-up 1200ms var(--ease-out) 900ms forwards;
+}
+.threshold__seal {
+  font-family: var(--font-cjk);
+  font-size: 1.4rem;
+  color: var(--brass);
+  letter-spacing: 0.5em;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+  opacity: 0;
+  animation: fade-up 1200ms var(--ease-out) 1100ms forwards;
+}
+.threshold__seats {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid rgba(156, 123, 60, 0.35);
+  background: rgba(15, 15, 15, 0.4);
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--bone);
+  opacity: 0;
+  animation: fade-up 1200ms var(--ease-out) 1400ms forwards;
+}
+.threshold__seats-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brass);
+  animation: pulse 2.4s var(--ease) infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.threshold__scroll-cue {
+  position: absolute;
+  bottom: clamp(2rem, 5vw, 3rem);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.66rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--patina);
+  opacity: 0;
+  animation: fade-in 1500ms var(--ease) 1800ms forwards;
+}
+.threshold__scroll-line {
+  width: 1px;
+  height: 32px;
+  background: rgba(107, 93, 69, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+.threshold__scroll-line::after {
+  content: '';
+  position: absolute;
+  left: 0; top: -50%;
+  width: 100%; height: 50%;
+  background: var(--brass);
+  animation: drip 2.4s var(--ease) infinite;
+}
+@keyframes drip {
+  0% { top: -50%; }
+  100% { top: 100%; }
+}
+
+/* ========================================================================
+   GENERIC SECTION
+   ======================================================================== */
+.section {
+  position: relative;
+  padding: var(--section-pad-y) var(--section-pad-x);
+}
+.section--light { background: var(--rice); color: var(--ink); }
+.section--bone  { background: var(--bone); color: var(--ink); }
+.section--dark  { background: var(--ink); color: var(--rice); }
+
+.section__inner {
+  position: relative;
+  z-index: 2;
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+}
+.section__inner--wide { max-width: var(--content-wide); }
+
+.section__overline {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.section__overline::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(156, 123, 60, 0.3);
+  max-width: 160px;
+}
+.section--dark .section__overline { color: var(--brass); }
+
+.section__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  margin: 0 0 1.2rem;
+  letter-spacing: -0.005em;
+}
+.section__title em {
+  font-style: italic;
+  color: var(--brass);
+}
+.section--dark .section__title em { color: var(--brass); }
+
+.section__lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.5vw, 1.3rem);
+  line-height: 1.55;
+  color: var(--graphite);
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(156, 123, 60, 0.2);
+}
+.section--dark .section__lede {
+  color: var(--bone);
+  border-color: rgba(156, 123, 60, 0.25);
+}
+
+.section p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin: 0 0 1.4rem;
+}
+.section--dark p { color: var(--bone); }
+
+.section p em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1em;
+  color: var(--brass-dim);
+}
+.section--dark p em { color: var(--brass); }
+
+.section__h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  line-height: 1.2;
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0 1rem;
+}
+.section--dark .section__h2 { color: var(--rice); }
+
+.section__pullquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  line-height: 1.4;
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 2px solid var(--brass);
+}
+
+/* ========================================================================
+   THREE INHERITANCES — visual triad
+   ======================================================================== */
+.inheritances {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin: clamp(3rem, 5vw, 4rem) 0 0;
+}
+@media (max-width: 920px) {
+  .inheritances { grid-template-columns: 1fr; }
+}
+.inheritance {
+  border-top: 1px solid var(--brass);
+  padding-top: 1.5rem;
+}
+.inheritance__roman {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 0.95rem;
+  letter-spacing: 0.3em;
+  margin-bottom: 0.4rem;
+}
+.inheritance__title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--ink);
+  margin: 0 0 0.8rem;
+  line-height: 1.2;
+}
+.section--dark .inheritance__title { color: var(--rice); }
+.inheritance__body {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--graphite);
+  margin: 0;
+}
+.section--dark .inheritance__body { color: var(--bone); }
+
+/* ========================================================================
+   THE TIERS — three cards (read-only, no "buy" button)
+   ======================================================================== */
+.tier-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2rem);
+  margin-top: clamp(3rem, 5vw, 4rem);
+}
+@media (max-width: 920px) {
+  .tier-cards { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+}
+.tier-card {
+  background: var(--rice);
+  padding: clamp(2rem, 3vw, 2.6rem) clamp(1.6rem, 2.5vw, 2.2rem);
+  border: 1px solid rgba(156, 123, 60, 0.2);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.section--dark .tier-card {
+  background: rgba(15, 15, 15, 0.5);
+  border-color: rgba(156, 123, 60, 0.25);
+}
+.tier-card__seats {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.4rem;
+}
+.tier-card__name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  margin: 0 0 0.6rem;
+  line-height: 1.1;
+}
+.section--dark .tier-card__name { color: var(--rice); }
+.tier-card__price {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--brass);
+  margin-bottom: 1rem;
+}
+.tier-card__hr {
+  width: 36px;
+  height: 1px;
+  background: var(--brass);
+  margin-bottom: 1.3rem;
+  border: 0;
+}
+.tier-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  color: var(--graphite);
+}
+.section--dark .tier-card__list { color: var(--bone); }
+.tier-card__list li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+.tier-card__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 6px;
+  height: 1px;
+  background: var(--brass);
+}
+
+/* ========================================================================
+   ASKS & WAITLIST badges
+   ======================================================================== */
+.asks-list {
+  list-style: none;
+  padding: 0;
+  margin: clamp(2rem, 4vw, 3rem) 0 0;
+  display: grid;
+  gap: 1.4rem;
+}
+.asks-list li {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding-left: 2.2rem;
+  position: relative;
+  color: var(--graphite);
+}
+.section--dark .asks-list li { color: var(--bone); }
+.asks-list li::before {
+  content: counter(asks, upper-roman);
+  counter-increment: asks;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+.asks-list {
+  counter-reset: asks;
+}
+
+.who-not {
+  background: rgba(139, 46, 31, 0.04);
+  border-left: 2px solid var(--cinnabar);
+  padding: clamp(1.8rem, 3vw, 2.5rem) clamp(1.5rem, 3vw, 2.2rem);
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0;
+}
+.who-not__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--cinnabar);
+  margin: 0 0 1rem;
+}
+.who-not__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 0.96rem;
+  line-height: 1.6;
+  color: var(--graphite);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.who-not__list li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+.who-not__list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--cinnabar);
+  opacity: 0.6;
+}
+
+/* ========================================================================
+   APPLICATION FORM
+   ======================================================================== */
+.application {
+  background: var(--bone);
+  color: var(--ink);
+  padding: var(--section-pad-y) var(--section-pad-x);
+  position: relative;
+}
+.application__inner {
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+}
+
+.application__intro {
+  text-align: center;
+  margin-bottom: clamp(3rem, 6vw, 4.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+  border-bottom: 1px solid rgba(156, 123, 60, 0.25);
+}
+.application__intro-overline {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 1.5rem;
+}
+.application__intro-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.15;
+  margin: 0 0 1rem;
+}
+.application__intro-title em {
+  font-style: italic;
+  color: var(--brass);
+}
+.application__intro-body {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--graphite);
+  max-width: 44ch;
+  margin: 0 auto;
+}
+
+/* Progress */
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  padding: 1rem 1.4rem;
+  background: var(--rice);
+  border: 1px solid rgba(156, 123, 60, 0.2);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--patina);
+}
+.progress__step {
+  color: var(--ink);
+  font-weight: 400;
+}
+.progress__step em {
+  font-style: normal;
+  color: var(--brass);
+}
+.progress__bar {
+  flex: 1;
+  margin: 0 1.4rem;
+  height: 1px;
+  background: rgba(107, 93, 69, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+.progress__bar-fill {
+  position: absolute;
+  left: 0; top: 0;
+  height: 100%;
+  background: var(--brass);
+  transition: width 600ms var(--ease);
+}
+.progress__autosave {
+  font-size: 0.66rem;
+  color: var(--patina);
+  opacity: 0;
+  transition: opacity 400ms var(--ease);
+  font-style: italic;
+  letter-spacing: 0.18em;
+  text-transform: none;
+}
+.progress__autosave.is-visible { opacity: 0.7; }
+
+@media (max-width: 640px) {
+  .progress { flex-wrap: wrap; gap: 0.6rem; }
+  .progress__bar { width: 100%; margin: 0.5rem 0; flex: none; }
+  .progress__autosave { font-size: 0.6rem; }
+}
+
+/* Steps */
+.step {
+  display: none;
+}
+.step.is-active { display: block; }
+
+.step__overline {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 0.8rem;
+}
+.step__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  line-height: 1.15;
+  margin: 0 0 0.8rem;
+  color: var(--ink);
+}
+.step__lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--graphite);
+  max-width: 44ch;
+  margin: 0 0 clamp(2rem, 4vw, 2.8rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.2rem);
+  border-bottom: 1px solid rgba(156, 123, 60, 0.2);
+}
+
+/* Field groups */
+.field {
+  margin-bottom: 1.6rem;
+}
+.field__label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--graphite);
+  margin-bottom: 0.55rem;
+  font-weight: 400;
+}
+.field__label-meta {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.85rem;
+  color: var(--patina);
+  letter-spacing: 0;
+  text-transform: none;
+  margin-left: 0.6rem;
+}
+.field__hint {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--patina);
+  margin-bottom: 0.8rem;
+  margin-top: -0.2rem;
+  line-height: 1.5;
+}
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="url"],
+.field input[type="number"],
+.field textarea,
+.field select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--rice);
+  border: 1px solid rgba(156, 123, 60, 0.3);
+  padding: 0.9rem 1rem;
+  transition: border-color 400ms var(--ease), background 400ms var(--ease);
+  border-radius: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+  line-height: 1.6;
+  font-family: var(--font-body);
+}
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--brass);
+  background: #FAF6EF;
+}
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(107, 93, 69, 0.5);
+  font-style: italic;
+}
+.field--error input,
+.field--error textarea,
+.field--error select {
+  border-color: var(--cinnabar);
+  background: rgba(139, 46, 31, 0.03);
+}
+.field__error {
+  display: none;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--cinnabar);
+  margin-top: 0.5rem;
+}
+.field--error .field__error { display: block; }
+
+.field__char-count {
+  display: block;
+  text-align: right;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  color: var(--patina);
+  margin-top: 0.4rem;
+  letter-spacing: 0.05em;
+}
+
+/* Radio + checkbox groups (custom-styled) */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.option {
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+.option input[type="radio"],
+.option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.option__visual {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--rice);
+  border: 1px solid rgba(156, 123, 60, 0.25);
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.4;
+  color: var(--ink);
+  transition: all 350ms var(--ease);
+}
+.option__visual::before {
+  content: '';
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--patina);
+  border-radius: 50%;
+  margin-top: 3px;
+  transition: all 350ms var(--ease);
+}
+.option input[type="checkbox"] ~ .option__visual::before {
+  border-radius: 2px;
+}
+.option:hover .option__visual {
+  border-color: var(--brass);
+  background: #FAF6EF;
+}
+.option input:checked ~ .option__visual {
+  border-color: var(--brass);
+  background: #F7F1E7;
+}
+.option input:checked ~ .option__visual::before {
+  background: var(--brass);
+  border-color: var(--brass);
+  box-shadow: inset 0 0 0 3px #F7F1E7;
+}
+.option input[type="checkbox"]:checked ~ .option__visual::before {
+  box-shadow: inset 0 0 0 2px #F7F1E7;
+}
+
+/* Step navigation */
+.step__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: clamp(1.5rem, 3vw, 2.2rem);
+  border-top: 1px solid rgba(156, 123, 60, 0.2);
+  gap: 1rem;
+}
+.btn {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  padding: 1rem 2rem 0.95rem;
+  border: 1px solid;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 500ms var(--ease);
+  font-weight: 400;
+  color: inherit;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn--back {
+  border-color: rgba(107, 93, 69, 0.4);
+  color: var(--patina);
+}
+.btn--back:hover {
+  border-color: var(--brass);
+  color: var(--brass);
+}
+.btn--continue {
+  border-color: var(--brass);
+  color: var(--ink);
+}
+.btn--continue::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--brass);
+  transform: translateY(101%);
+  transition: transform 500ms var(--ease);
+  z-index: -1;
+}
+.btn--continue:hover {
+  color: var(--rice);
+}
+.btn--continue:hover::before {
+  transform: translateY(0);
+}
+.btn--submit {
+  border-color: var(--cinnabar);
+  color: var(--rice);
+  background: var(--cinnabar);
+  padding: 1.2rem 2.4rem 1.15rem;
+}
+.btn--submit::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--cinnabar-deep);
+  transform: translateY(101%);
+  transition: transform 500ms var(--ease);
+  z-index: -1;
+}
+.btn--submit:hover::before {
+  transform: translateY(0);
+}
+.btn__arrow {
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  position: relative;
+  transition: transform 400ms var(--ease);
+}
+.btn__arrow::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: -3px;
+  width: 7px; height: 7px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(-45deg);
+}
+.btn--back .btn__arrow { transform: rotate(180deg); }
+.btn--continue:hover .btn__arrow,
+.btn--submit:hover .btn__arrow { transform: translateX(4px); }
+.btn--back:hover .btn__arrow { transform: rotate(180deg) translateX(4px); }
+
+/* Step skip placeholder */
+.step__nav-spacer { flex: 1; }
+
+/* Review step */
+.review {
+  background: var(--rice);
+  border: 1px solid rgba(156, 123, 60, 0.25);
+  padding: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 2rem;
+}
+.review__group {
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid rgba(156, 123, 60, 0.15);
+}
+.review__group:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.review__group-title {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 0.9rem;
+}
+.review__row {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+.review__row dt {
+  color: var(--patina);
+  font-weight: 400;
+  font-family: var(--font-display);
+  font-style: italic;
+}
+.review__row dd {
+  margin: 0;
+  color: var(--ink);
+  word-wrap: break-word;
+}
+.review__row--empty dd {
+  color: rgba(107, 93, 69, 0.5);
+  font-style: italic;
+}
+@media (max-width: 640px) {
+  .review__row { grid-template-columns: 1fr; gap: 0.2rem; }
+}
+
+.submit-note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--graphite);
+  text-align: center;
+  max-width: 44ch;
+  margin: 0 auto clamp(1.5rem, 3vw, 2rem);
+}
+
+/* ========================================================================
+   FOUNDER NOTE BLOCK
+   ======================================================================== */
+.founder-note {
+  background: var(--rice);
+  text-align: center;
+  padding: var(--section-pad-y) var(--section-pad-x);
+}
+.founder-note__inner {
+  max-width: var(--content-narrow);
+  margin: 0 auto;
+}
+.founder-note__rule {
+  width: 60px;
+  height: 1px;
+  background: var(--brass);
+  margin: 0 auto 2.5rem;
+}
+.founder-note__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 36ch;
+  margin: 0 auto 2.5rem;
+}
+.founder-note__quote em {
+  font-style: normal;
+  color: var(--brass);
+}
+.founder-note__sig {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--graphite);
+  margin-bottom: 0.4rem;
+}
+.founder-note__sig-meta {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--patina);
+  margin-bottom: 2.5rem;
+}
+.founder-note__seal {
+  font-family: var(--font-cjk);
+  font-size: 1.8rem;
+  letter-spacing: 0.5em;
+  color: var(--cinnabar);
+}
+
+/* ========================================================================
+   FOOTER
+   ======================================================================== */
+.footer {
+  background: var(--ink);
+  color: var(--bone);
+  padding: 3rem var(--section-pad-x) 1.8rem;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--patina);
+}
+.footer__seal {
+  font-family: var(--font-cjk);
+  font-size: 1rem;
+  letter-spacing: 0.4em;
+  color: var(--brass);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.footer__links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.footer__links a {
+  color: var(--bone);
+  transition: color 400ms var(--ease);
+}
+.footer__links a:hover { color: var(--brass); }
+
+/* ========================================================================
+   ANIMATIONS
+   ======================================================================== */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 1100ms var(--ease-out), transform 1100ms var(--ease-out);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Step transition */
+.step.is-active {
+  animation: step-in 600ms var(--ease-out);
+}
+@keyframes step-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .threshold__overline,
+  .threshold__title,
+  .threshold__subtitle,
+  .threshold__seal,
+  .threshold__seats,
+  .threshold__scroll-cue { opacity: 1; }
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: var(--rice);
+  padding: 1rem 1.4rem;
+  z-index: 200;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Visually hidden but accessible */
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+</style>
+
+</head>
+<body>
+
+<a href="#application" class="skip-link">Skip to application</a>
+
+<header class="topbar">
+  <a href="index.html" class="topbar__back" aria-label="Back to Yi Chamber">
+    <span class="topbar__back-arrow" aria-hidden="true"></span>
+    <span>Yi Chamber</span>
+  </a>
+  <a href="index.html" class="topbar__seal" aria-label="Yi Chamber">易 室</a>
+</header>
+
+<main id="main">
+
+<!-- ============================================================
+     THRESHOLD
+     ============================================================ -->
+<section class="threshold" aria-label="Threshold">
+  <div class="threshold__grain" aria-hidden="true"></div>
+  <div class="threshold__inner">
+    <div class="threshold__overline">An application &middot; not a purchase</div>
+    <h1 class="threshold__title">The Council of <em>Ten</em>.</h1>
+    <p class="threshold__subtitle">Ten people who choose to stand here at the beginning &mdash; before the chamber is built, before the first session, before we are sure we will succeed.</p>
+    <div class="threshold__seal" aria-hidden="true">易 室</div>
+    <div class="threshold__seats" id="seats-badge">
+      <span class="threshold__seats-dot" aria-hidden="true"></span>
+      <span><span id="seats-remaining">10</span> of 10 seats remaining</span>
+    </div>
+  </div>
+  <div class="threshold__scroll-cue" aria-hidden="true">
+    <span>Begin</span>
+    <span class="threshold__scroll-line"></span>
+  </div>
+</section>
+
+<!-- ============================================================
+     THREE INHERITANCES
+     ============================================================ -->
+<section class="section section--light">
+  <div class="section__inner reveal">
+    <div class="section__overline">I &middot; Why this exists</div>
+    <h2 class="section__title">Three <em>inheritances</em> meeting at one point in time.</h2>
+    <p class="section__lede">Yi Chamber was not invented. It was assembled from three separate streams that have, until now, never been brought into contact with one another in a single building.</p>
+
+    <p>The first inheritance is the Yi Jing. Three thousand years of refinement by some of the most disciplined minds in human civilisation &mdash; Confucius, Wang Bi, Zhu Xi, Jung, Bohr, Leibniz, Wilhelm, Minford. A structural map of every possible human situation, expressed in sixty-four hexagrams, each composed of two trigrams stacked upon each other. Not a religion. Not a divinatory novelty. <em>A system.</em></p>
+
+    <p>The second inheritance is the polyvagal theory and the contemporary neuroscience of the autonomic nervous system. Three decades of empirical work showing that what ancient practices have always claimed about breath, vibration, ritual, and rhythm is not metaphysical but anatomical. The vagus nerve does what the sages said it did. The body keeps the score. The body also keeps the resonance.</p>
+
+    <p>The third inheritance is the contemporary moment. Five conditions have aligned in 2026 that did not exist a decade ago and may not align again: the science has matured, the audience has matured, Vietnam has stabilised, the supply chain of master bowl-makers is at peak quality, and large language models can now integrate ancient commentary with current neurophysiology in a way that previously required research institutes.</p>
+
+    <div class="inheritances">
+      <div class="inheritance">
+        <div class="inheritance__roman">I</div>
+        <h3 class="inheritance__title">The map</h3>
+        <p class="inheritance__body">Yi Jing. Three thousand years of refinement. Sixty-four hexagrams. Eight trigrams. A binary structure Leibniz admired and Bohr put on his coat of arms.</p>
+      </div>
+      <div class="inheritance">
+        <div class="inheritance__roman">II</div>
+        <h3 class="inheritance__title">The instrument</h3>
+        <p class="inheritance__body">Polyvagal theory. Vibrotactile stimulation. Heart-brain coherence. The body the sages described, now described again by neuroscience.</p>
+      </div>
+      <div class="inheritance">
+        <div class="inheritance__roman">III</div>
+        <h3 class="inheritance__title">The window</h3>
+        <p class="inheritance__body">2026. A conjunction of conditions that did not exist in 2016 and may not exist in 2036. The cost of building this elsewhere would have been ten times what it is in Hoi An.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT THE COUNCIL IS
+     ============================================================ -->
+<section class="section section--dark">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="section__inner reveal">
+    <div class="section__overline">II &middot; What you are joining</div>
+    <h2 class="section__title">The Council is the <em>foundation</em>.</h2>
+    <p class="section__lede">Yi Chamber opens with ten founding seats. After the tenth seat is filled, the Council closes forever. There will not be an eleventh seat &mdash; not in 2026, not in 2050, not at any future location.</p>
+
+    <p>The number ten is structural. The Great Treatise of the Yi Jing opens with the words <em>Heaven is one, Earth is two</em> and counts through ten before completing the cycle of the heavenly and earthly stems. We took this seriously.</p>
+
+    <p>The Council is not a membership tier. The Council is the architecture on which everything else stands. The capital you contribute funds the building of the original space, the calibration of the bowls, the training of the practitioners, the cultivation of the protocol. In return, you receive lifetime Adept-tier membership and your name becomes inseparable from the project for as long as it exists.</p>
+
+    <p>If Yi Chamber endures for fifty years across multiple locations, the ten founders will be its permanent first generation. Their hexagrams &mdash; cast at the moment of their joining &mdash; will be carved into the Founders&rsquo; Wall in the Yi Bar in Hoi An. Their names will be read aloud at every annual anniversary ritual. Their seats will not be inherited, transferred, or resold.</p>
+
+    <p class="section__pullquote">This is not a luxury wellness purchase. It is a civilisational seat. The cost reflects the commitment, not the service rendered.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     THE THREE SEATS
+     ============================================================ -->
+<section class="section section--bone">
+  <div class="section__inner section__inner--wide reveal">
+    <div class="section__overline">III &middot; The three seats</div>
+    <h2 class="section__title">Patron. Founder. <em>Co-Founder.</em></h2>
+    <p class="section__lede">Three categories within the Council, distinguished by contribution and by what they fund. All three carry lifetime Adept-tier membership. All three are named on the Founders&rsquo; Wall. All three close, once filled, forever.</p>
+
+    <div class="tier-cards">
+
+      <article class="tier-card">
+        <div class="tier-card__seats">Two seats &middot; ever</div>
+        <h3 class="tier-card__name">Founding Patron</h3>
+        <div class="tier-card__price">&euro;&thinsp;50,000</div>
+        <hr class="tier-card__hr" />
+        <ul class="tier-card__list">
+          <li>Lifetime Adept membership (twenty-four sessions per year, for life)</li>
+          <li>All anchor retreats included for life</li>
+          <li>Naming rights on one of the chambers or a key architectural feature</li>
+          <li>Two annual guest passes for life</li>
+          <li>First access to all future Yi Chamber locations</li>
+          <li>Private annual dinner with the founder</li>
+          <li>Hexagram cast at founding, engraved on the Founders&rsquo; Wall</li>
+        </ul>
+      </article>
+
+      <article class="tier-card">
+        <div class="tier-card__seats">Three seats &middot; ever</div>
+        <h3 class="tier-card__name">Founder</h3>
+        <div class="tier-card__price">&euro;&thinsp;25,000</div>
+        <hr class="tier-card__hr" />
+        <ul class="tier-card__list">
+          <li>Lifetime Adept membership</li>
+          <li>One annual guest pass for life</li>
+          <li>Priority access to all retreats</li>
+          <li>Access to the founder&rsquo;s circle &mdash; quarterly invitation-only conversation about Yi Chamber&rsquo;s evolution</li>
+          <li>Name on the Founders&rsquo; Wall</li>
+        </ul>
+      </article>
+
+      <article class="tier-card">
+        <div class="tier-card__seats">Five seats &middot; ever</div>
+        <h3 class="tier-card__name">Co-Founder</h3>
+        <div class="tier-card__price">&euro;&thinsp;15,000</div>
+        <hr class="tier-card__hr" />
+        <ul class="tier-card__list">
+          <li>Lifetime Adept membership</li>
+          <li>Acknowledgement on the Founders&rsquo; Wall</li>
+          <li>The most accessible of the founding tiers, designed for committed members who recognise the project&rsquo;s significance and wish to be part of its origin</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     WHAT WE ASK
+     ============================================================ -->
+<section class="section section--light">
+  <div class="section__inner reveal">
+    <div class="section__overline">IV &middot; What we ask in return</div>
+    <h2 class="section__title">The capital is the <em>smallest</em> part.</h2>
+    <p class="section__lede">If the only thing required of a founding member were a wire transfer, this would be a luxury subscription. It is not. The Council exists because Yi Chamber needs ten people who carry something beyond their contribution.</p>
+
+    <ol class="asks-list">
+      <li><strong>Presence.</strong> You will be expected to come to Hoi An at least twice in 2026, including the founding ritual in autumn. After that, the Adept cadence is twenty-four sessions per year. If you cannot conceive of returning, you should not apply.</li>
+      <li><strong>Patience.</strong> Yi Chamber is built on a horizon of decades, not quarters. The first year will not yield documentary results. The third year will. The tenth year will redefine your sense of what regular practice can produce.</li>
+      <li><strong>Discretion.</strong> The founding cohort is not promoted publicly. Names appear on the Founders&rsquo; Wall in Hoi An, not in press releases. Members who wish to speak about their participation are welcome to. Members who wish for privacy receive it.</li>
+      <li><strong>Honesty about your own nervous system.</strong> Yi Chamber is not a substitute for medicine. If you are in acute mental health crisis, this is not the right entry point. If you are intellectually serious about regulation and willing to be patient with structure, it is.</li>
+      <li><strong>Trust that scale will not be pursued.</strong> The founding location is capped at approximately three hundred active members. We will not grow beyond this. The Council&rsquo;s contribution is partly an instruction: <em>build deep, not wide.</em></li>
+    </ol>
+
+    <div class="who-not">
+      <h3 class="who-not__title">Yi Chamber is not for:</h3>
+      <ul class="who-not__list">
+        <li>People in active mental health crisis &mdash; you need a clinician, not a sound chamber</li>
+        <li>Those seeking to escape their lives rather than meet them</li>
+        <li>Those who require visible transformation within a single weekend</li>
+        <li>Those who cannot commit to multi-year practice</li>
+        <li>Those who confuse luxury for depth</li>
+        <li>Those who need a guru, a charismatic teacher, or a system of belief</li>
+      </ul>
+    </div>
+
+    <p>If any of the above describe you, this is the gentlest possible signal that Yi Chamber is not where you should direct your capital. We say this in advance because we would rather lose an applicant at this paragraph than lose them at month four.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     BEFORE THE APPLICATION
+     ============================================================ -->
+<section class="section section--dark">
+  <div class="grain" aria-hidden="true"></div>
+  <div class="section__inner reveal">
+    <div class="section__overline">V &middot; The application</div>
+    <h2 class="section__title">A longer <em>conversation</em>, beginning here.</h2>
+    <p class="section__lede">The form below takes approximately twenty to thirty minutes to complete. It is intentionally long. We are not collecting leads &mdash; we are beginning a relationship.</p>
+
+    <p>You will be asked about who you are, what you do, what brings you to Yi Chamber, how you experience your own nervous system, what tier you are applying for, and what you might bring to the founding cohort beyond capital. Some of these questions are personal. None are decorative.</p>
+
+    <p>Your answers are saved automatically as you type. If you close the tab, your draft will be waiting when you return. The form will not be transmitted until you press the final cinnabar button at the end.</p>
+
+    <p>Within seven days, the founder will read your application personally and reply from <em>inquire@yichamber.com</em>. If there is alignment, the conversation continues &mdash; usually by video call, occasionally by letter, sometimes in person if you happen to be in Hoi An or one of the cities the founder passes through.</p>
+
+    <p class="section__pullquote">There is no algorithm reviewing this. No team. No CRM scoring you. One person, reading carefully, replying when ready.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     APPLICATION FORM
+     ============================================================ -->
+<section class="application" id="application">
+  <div class="application__inner">
+
+    <div class="application__intro">
+      <div class="application__intro-overline">Application to the Council</div>
+      <h2 class="application__intro-title">Begin <em>when ready</em>.</h2>
+      <p class="application__intro-body">Eight sections. Twenty to thirty minutes. Your answers save as you type.</p>
+    </div>
+
+    <!-- Progress bar -->
+    <div class="progress" role="status" aria-live="polite">
+      <div class="progress__step">Step <em id="step-current">1</em> of 8</div>
+      <div class="progress__bar"><div class="progress__bar-fill" id="progress-fill" style="width: 12.5%"></div></div>
+      <div class="progress__autosave" id="autosave-indicator">Saved</div>
+    </div>
+
+    <form id="apply-form" novalidate>
+
+      <!-- STEP 1: WHO YOU ARE -->
+      <div class="step is-active" data-step="1">
+        <div class="step__overline">Section A &middot; Who you are</div>
+        <h3 class="step__title">Let us begin <em>with your name</em>.</h3>
+        <p class="step__lede">The basics. So we know where to write back and who is on the other side of the message.</p>
+
+        <div class="field">
+          <label class="field__label" for="f-firstname">First name</label>
+          <input type="text" id="f-firstname" name="firstname" required autocomplete="given-name" />
+          <div class="field__error">Please enter your first name.</div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-lastname">Last name (family name)</label>
+          <input type="text" id="f-lastname" name="lastname" required autocomplete="family-name" />
+          <div class="field__error">Please enter your last name.</div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-email">Email <span class="field__label-meta">primary correspondence</span></label>
+          <input type="email" id="f-email" name="email" required autocomplete="email" />
+          <div class="field__error">Please enter a valid email address.</div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-phone">Phone <span class="field__label-meta">international format with country code</span></label>
+          <input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="+44 7700 900000" />
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-location">Current location <span class="field__label-meta">city, country</span></label>
+          <input type="text" id="f-location" name="location" required />
+          <div class="field__error">Please share your current city and country.</div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-birthyear">Year of birth</label>
+          <input type="number" id="f-birthyear" name="birthyear" min="1920" max="2010" placeholder="1978" />
+          <span class="field__hint">We ask only the year. Not the full date.</span>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-identity">How you describe yourself <span class="field__label-meta">optional &middot; in your own words</span></label>
+          <input type="text" id="f-identity" name="identity" placeholder="Your own description, if you wish to give one" />
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-web">Website, LinkedIn, or other public profile <span class="field__label-meta">optional</span></label>
+          <input type="url" id="f-web" name="web" placeholder="https://" />
+        </div>
+
+        <div class="step__nav">
+          <span class="step__nav-spacer"></span>
+          <button type="button" class="btn btn--continue" data-action="next">
+            <span>Continue</span>
+            <span class="btn__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 2: WHAT YOU DO -->
+      <div class="step" data-step="2">
+        <div class="step__overline">Section B &middot; What you do</div>
+        <h3 class="step__title">The shape of your <em>working life</em>.</h3>
+        <p class="step__lede">We are not interested in your job title. We are interested in what you have built, what you are responsible for, and the load it carries.</p>
+
+        <div class="field">
+          <label class="field__label" for="f-work">Current work &middot; role &middot; creative practice</label>
+          <textarea id="f-work" name="work" maxlength="500" placeholder="A few sentences in your own words. What do you do, what does it ask of you, and what holds it together?" required></textarea>
+          <span class="field__char-count" id="cc-work">0 / 500</span>
+          <div class="field__error">Please tell us, in a few sentences, what you do.</div>
+        </div>
+
+        <div class="field">
+          <label class="field__label">Annual income bracket <span class="field__label-meta">private &middot; used only to confirm fit with tier commitment</span></label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="income" value="under-100k" />
+              <span class="option__visual">Under &euro;&thinsp;100,000</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="income" value="100-250k" />
+              <span class="option__visual">&euro;&thinsp;100,000 &mdash; &euro;&thinsp;250,000</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="income" value="250-500k" />
+              <span class="option__visual">&euro;&thinsp;250,000 &mdash; &euro;&thinsp;500,000</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="income" value="500k-1m" />
+              <span class="option__visual">&euro;&thinsp;500,000 &mdash; &euro;&thinsp;1,000,000</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="income" value="over-1m" />
+              <span class="option__visual">Over &euro;&thinsp;1,000,000</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="income" value="prefer-not" />
+              <span class="option__visual">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label">Are you currently founding, running, or operating a business?</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="founder_status" value="yes-one" />
+              <span class="option__visual">Yes &mdash; one</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="founder_status" value="yes-multiple" />
+              <span class="option__visual">Yes &mdash; multiple</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="founder_status" value="no" />
+              <span class="option__visual">No</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="founder_status" value="other" />
+              <span class="option__visual">Something else &mdash; will explain later in the form</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="step__nav">
+          <button type="button" class="btn btn--back" data-action="back">
+            <span class="btn__arrow" aria-hidden="true"></span>
+            <span>Back</span>
+          </button>
+          <button type="button" class="btn btn--continue" data-action="next">
+            <span>Continue</span>
+            <span class="btn__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 3: WHY YI CHAMBER -->
+      <div class="step" data-step="3">
+        <div class="step__overline">Section C &middot; Why Yi Chamber</div>
+        <h3 class="step__title">How <em>this</em> arrived to you.</h3>
+        <p class="step__lede">There is no wrong answer. There is only the answer that is yours.</p>
+
+        <div class="field">
+          <label class="field__label">How did you first encounter Yi Chamber?</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="how_heard" value="personal-intro" />
+              <span class="option__visual">Personal introduction by Steven Alber</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="how_heard" value="referral" />
+              <span class="option__visual">A friend, colleague, or peer</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="how_heard" value="social" />
+              <span class="option__visual">Social media</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="how_heard" value="press" />
+              <span class="option__visual">An article, podcast, or interview</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="how_heard" value="search" />
+              <span class="option__visual">Searching for something specific</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="how_heard" value="other" />
+              <span class="option__visual">Other &mdash; will describe below</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-touched">What in Yi Chamber touches you specifically? <span class="field__label-meta">100&ndash;500 characters</span></label>
+          <textarea id="f-touched" name="touched" maxlength="500" placeholder="Not what attracts you in general. What touches you specifically." required></textarea>
+          <span class="field__char-count" id="cc-touched">0 / 500</span>
+          <div class="field__error">A sentence or two, please. What is it about Yi Chamber, specifically?</div>
+        </div>
+
+        <div class="field">
+          <label class="field__label">Have you read the Concept Bible?</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="bible_read" value="yes" />
+              <span class="option__visual">Yes &mdash; in full</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="bible_read" value="partly" />
+              <span class="option__visual">Partly</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="bible_read" value="no" />
+              <span class="option__visual">Not yet &mdash; please send</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="step__nav">
+          <button type="button" class="btn btn--back" data-action="back">
+            <span class="btn__arrow" aria-hidden="true"></span>
+            <span>Back</span>
+          </button>
+          <button type="button" class="btn btn--continue" data-action="next">
+            <span>Continue</span>
+            <span class="btn__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 4: YOUR NERVOUS SYSTEM -->
+      <div class="step" data-step="4">
+        <div class="step__overline">Section D &middot; Your nervous system</div>
+        <h3 class="step__title">The body you are <em>bringing</em>.</h3>
+        <p class="step__lede">Yi Chamber is, at its core, a structured intervention into the autonomic nervous system. We need to know what state you arrive in. None of what you write here is shared with anyone outside the founder.</p>
+
+        <div class="field">
+          <label class="field__label">How would you describe the present state of your nervous system?</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="ns_state" value="stable-curious" />
+              <span class="option__visual">Stable, but I sense it could go deeper</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="ns_state" value="under-pressure" />
+              <span class="option__visual">Under sustained pressure</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="ns_state" value="recovering" />
+              <span class="option__visual">Recovering from a difficult period</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="ns_state" value="transition" />
+              <span class="option__visual">In an active life transition</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="ns_state" value="other" />
+              <span class="option__visual">Something else &mdash; will describe below</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-practices">Practices you already work with <span class="field__label-meta">optional</span></label>
+          <textarea id="f-practices" name="practices" placeholder="Meditation, yoga, breath work, therapy, body work, plant medicine, time outdoors, prayer, silence. Whatever is true for you."></textarea>
+        </div>
+
+        <div class="field">
+          <label class="field__label">Have you had a serious mental health diagnosis &mdash; past or present?</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="mh_history" value="no" />
+              <span class="option__visual">No</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="mh_history" value="past" />
+              <span class="option__visual">In the past &mdash; now resolved or managed</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="mh_history" value="current" />
+              <span class="option__visual">Currently under clinical care</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="mh_history" value="prefer-not" />
+              <span class="option__visual">Prefer not to say</span>
+            </label>
+          </div>
+          <span class="field__hint">This is not a screen-out. It is information that helps us understand how best to receive you. People in active clinical care are welcome &mdash; in close coordination with their clinician.</span>
+        </div>
+
+        <div class="step__nav">
+          <button type="button" class="btn btn--back" data-action="back">
+            <span class="btn__arrow" aria-hidden="true"></span>
+            <span>Back</span>
+          </button>
+          <button type="button" class="btn btn--continue" data-action="next">
+            <span>Continue</span>
+            <span class="btn__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 5: THE COMMITMENT -->
+      <div class="step" data-step="5">
+        <div class="step__overline">Section E &middot; The commitment</div>
+        <h3 class="step__title">Which seat <em>calls</em> you?</h3>
+        <p class="step__lede">Choose what corresponds to your means and to your sense of how deeply you wish to anchor at the founding. Patron is not <em>better</em>. It is heavier. Each tier carries its own form of belonging.</p>
+
+        <div class="field">
+          <label class="field__label">The tier you are applying for</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="tier" value="patron" required />
+              <span class="option__visual">Founding Patron &middot; two seats &middot; the heaviest commitment</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="tier" value="founder" />
+              <span class="option__visual">Founder &middot; three seats &middot; the middle commitment</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="tier" value="co-founder" />
+              <span class="option__visual">Co-Founder &middot; five seats &middot; the entry to the Council</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="tier" value="open" />
+              <span class="option__visual">Open to discussion based on fit</span>
+            </label>
+          </div>
+          <div class="field__error">Please choose a tier &mdash; or indicate you are open to discussion.</div>
+        </div>
+
+        <div class="field">
+          <label class="field__label">Payment preference</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="payment" value="single" />
+              <span class="option__visual">Single payment</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="payment" value="two-installment" />
+              <span class="option__visual">Two installments over three months</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="payment" value="four-installment" />
+              <span class="option__visual">Four installments over twelve months</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="payment" value="discuss" />
+              <span class="option__visual">Wish to discuss with the founder</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label">Do you have a visa solution for visiting Vietnam?</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="visa" value="yes" />
+              <span class="option__visual">Yes</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="visa" value="will-arrange" />
+              <span class="option__visual">Will arrange</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="visa" value="need-help" />
+              <span class="option__visual">May need help with this</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field__label">How many sessions per year do you realistically expect to attend?</label>
+          <div class="options">
+            <label class="option">
+              <input type="radio" name="sessions" value="2-4" />
+              <span class="option__visual">Two to four per year</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="sessions" value="6-12" />
+              <span class="option__visual">Six to twelve per year</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="sessions" value="18-24" />
+              <span class="option__visual">Eighteen to twenty-four per year</span>
+            </label>
+            <label class="option">
+              <input type="radio" name="sessions" value="all" />
+              <span class="option__visual">All sessions available under the Adept cadence</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="step__nav">
+          <button type="button" class="btn btn--back" data-action="back">
+            <span class="btn__arrow" aria-hidden="true"></span>
+            <span>Back</span>
+          </button>
+          <button type="button" class="btn btn--continue" data-action="next">
+            <span>Continue</span>
+            <span class="btn__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 6: RELATIONAL CONTEXT -->
+      <div class="step" data-step="6">
+        <div class="step__overline">Section F &middot; Relational context</div>
+        <h3 class="step__title">The people around <em>you</em>.</h3>
+        <p class="step__lede">Optional, but informative. We work better when we know whether you are arriving alone or with someone &mdash; and whether there is someone you might bring with you over time.</p>
+
+        <div class="field">
+          <label class="field__label" for="f-living">Who do you currently live with? <span class="field__label-meta">optional</span></label>
+          <input type="text" id="f-living" name="living" placeholder="Partner, family, alone, shared household, animals" />
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-guest">If you have a guest pass, who might you bring? <span class="field__label-meta">optional &middot; no need to name names</span></label>
+          <textarea id="f-guest" name="guest" placeholder="A partner. A sister. A close friend. A mentor. A description, not a name."></textarea>
+        </div>
+
+        <div class="step__nav">
+          <button type="button" class="btn btn--back" data-action="back">
+            <span class="btn__arrow" aria-hidden="true"></span>
+            <span>Back</span>
+          </button>
+          <button type="button" class="btn btn--continue" data-action="next">
+            <span>Continue</span>
+            <span class="btn__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 7: THE INTANGIBLE -->
+      <div class="step" data-step="7">
+        <div class="step__overline">Section G &middot; The intangible</div>
+        <h3 class="step__title">What you <em>hope to receive</em>. What you <em>might bring</em>.</h3>
+        <p class="step__lede">The two questions on which a Council seat actually turns. Take your time. Sentences are welcome. So is one careful paragraph.</p>
+
+        <div class="field">
+          <label class="field__label" for="f-hope">What do you hope to receive from Yi Chamber over a lifetime? <span class="field__label-meta">200&ndash;1000 characters</span></label>
+          <textarea id="f-hope" name="hope" maxlength="1000" placeholder="Not what you want from a single session. What you hope this might mean to your life over years." required style="min-height: 160px;"></textarea>
+          <span class="field__char-count" id="cc-hope">0 / 1000</span>
+          <div class="field__error">Please share something here &mdash; even a few sentences.</div>
+        </div>
+
+        <div class="field">
+          <label class="field__label" for="f-bring">What might you bring to the founding cohort? <span class="field__label-meta">optional</span></label>
+          <textarea id="f-bring" name="bring" maxlength="1000" placeholder="Art. Writing. A network. A way of thinking. A specific knowledge. Money, yes &mdash; but anything else? This is the question that most often distinguishes a Patron-tier candidate from a Co-Founder candidate, in either direction." style="min-height: 160px;"></textarea>
+          <span class="field__char-count" id="cc-bring">0 / 1000</span>
+        </div>
+
+        <div class="step__nav">
+          <button type="button" class="btn btn--back" data-action="back">
+            <span class="btn__arrow" aria-hidden="true"></span>
+            <span>Back</span>
+          </button>
+          <button type="button" class="btn btn--continue" data-action="next">
+            <span>Continue</span>
+            <span class="btn__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+      <!-- STEP 8: CONFIRMATION & REVIEW -->
+      <div class="step" data-step="8">
+        <div class="step__overline">Section H &middot; Confirmation</div>
+        <h3 class="step__title">Before <em>you send</em>.</h3>
+        <p class="step__lede">A final review. Read once. Confirm what you can confirm. Submit when ready.</p>
+
+        <div class="field">
+          <label class="option">
+            <input type="checkbox" name="confirm_understand" required />
+            <span class="option__visual">I have read enough of Yi Chamber&rsquo;s material to understand what it is, and I do not expect more clarity until the conversation continues.</span>
+          </label>
+          <div class="field__error">This confirmation is required.</div>
+        </div>
+
+        <div class="field">
+          <label class="option">
+            <input type="checkbox" name="confirm_capital" required />
+            <span class="option__visual">I am prepared to contribute the capital at my chosen tier, on agreement.</span>
+          </label>
+          <div class="field__error">This confirmation is required.</div>
+        </div>
+
+        <div class="field">
+          <label class="option">
+            <input type="checkbox" name="confirm_visit" required />
+            <span class="option__visual">I am prepared to visit Hoi An at least twice in 2026, including the founding ritual.</span>
+          </label>
+          <div class="field__error">This confirmation is required.</div>
+        </div>
+
+        <div class="field">
+          <label class="option">
+            <input type="checkbox" name="confirm_council" required />
+            <span class="option__visual">I understand that the Council of Ten closes once filled and that my application is evaluated relative to other candidates.</span>
+          </label>
+          <div class="field__error">This confirmation is required.</div>
+        </div>
+
+        <h4 class="step__title" style="font-size: 1.4rem; margin-top: 2.5rem;">Your application, in summary.</h4>
+
+        <div class="review" id="review-summary" aria-live="polite">
+          <!-- populated by JS -->
+        </div>
+
+        <p class="submit-note">When you press the cinnabar button, your draft email will open in your mail application, pre-filled with your application. You will then send it. Nothing leaves your computer until you do.</p>
+
+        <div class="step__nav">
+          <button type="button" class="btn btn--back" data-action="back">
+            <span class="btn__arrow" aria-hidden="true"></span>
+            <span>Back</span>
+          </button>
+          <button type="button" class="btn btn--submit" id="submit-btn">
+            <span>Submit my application to the Council</span>
+            <span class="btn__arrow" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- ============================================================
+     FOUNDER NOTE
+     ============================================================ -->
+<section class="founder-note">
+  <div class="founder-note__inner">
+    <div class="founder-note__rule"></div>
+    <blockquote class="founder-note__quote">
+      &ldquo;I will read every application personally. Within seven days, you will hear back. <em>This is the rhythm.</em>&rdquo;
+    </blockquote>
+    <div class="founder-note__sig">Steven Alber</div>
+    <div class="founder-note__sig-meta">Founder &middot; Yi Chamber</div>
+    <div class="founder-note__seal" aria-label="Yi Shi seal">易 室</div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <span class="footer__seal" aria-label="Yi Shi seal">易 室</span>
+  &copy; MMXXVI Yi Chamber &middot; Hoi An &middot; Vietnam
+  <div class="footer__links">
+    <a href="index.html">The Chamber</a>
+    <a href="founder.html">Founder&rsquo;s Letter</a>
+    <a href="questions.html">Questions</a>
+    <a href="mailto:inquire@yichamber.com">inquire@yichamber.com</a>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  const STORAGE_KEY = 'yc-application-v1';
+  const TOTAL_STEPS = 8;
+  let currentStep = 1;
+
+  // --------------------------------------------------------------------
+  // Reveal-on-scroll
+  // --------------------------------------------------------------------
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+  }
+
+  // --------------------------------------------------------------------
+  // Form, steps, persistence
+  // --------------------------------------------------------------------
+  const form = document.getElementById('apply-form');
+  const stepEls = form.querySelectorAll('.step');
+  const progressFill = document.getElementById('progress-fill');
+  const stepCurrent = document.getElementById('step-current');
+  const autosave = document.getElementById('autosave-indicator');
+
+  // Load saved data
+  function loadDraft() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+      Object.keys(data).forEach((name) => {
+        const fields = form.querySelectorAll('[name="' + name + '"]');
+        if (!fields.length) return;
+        if (fields[0].type === 'radio' || fields[0].type === 'checkbox') {
+          fields.forEach((f) => {
+            if (f.value === data[name] || (Array.isArray(data[name]) && data[name].includes(f.value))) {
+              f.checked = true;
+            }
+            if (f.type === 'checkbox' && data[name] === true) {
+              f.checked = true;
+            }
+          });
+        } else {
+          fields[0].value = data[name] || '';
+        }
+      });
+      updateCharCounts();
+    } catch(e) {
+      // ignore, fresh start
+    }
+  }
+
+  function saveDraft() {
+    const data = {};
+    const formData = new FormData(form);
+    for (const [k, v] of formData.entries()) {
+      if (data[k] !== undefined) {
+        if (Array.isArray(data[k])) data[k].push(v);
+        else data[k] = [data[k], v];
+      } else {
+        data[k] = v;
+      }
+    }
+    // checkboxes need explicit handling for unchecked state
+    form.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+      data[cb.name] = cb.checked;
+    });
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      showAutosave();
+    } catch(e) {
+      // localStorage might be disabled; fail silently
+    }
+  }
+
+  let autosaveTimer;
+  function showAutosave() {
+    autosave.classList.add('is-visible');
+    autosave.textContent = 'Saved';
+    clearTimeout(autosaveTimer);
+    autosaveTimer = setTimeout(() => {
+      autosave.classList.remove('is-visible');
+    }, 1800);
+  }
+
+  // Character counts
+  function updateCharCounts() {
+    document.querySelectorAll('textarea[maxlength]').forEach((ta) => {
+      const id = 'cc-' + ta.id.replace('f-', '');
+      const counter = document.getElementById(id);
+      if (counter) {
+        counter.textContent = ta.value.length + ' / ' + ta.maxLength;
+      }
+    });
+  }
+
+  // Validation
+  function validateStep(stepNum) {
+    const step = form.querySelector('.step[data-step="' + stepNum + '"]');
+    if (!step) return true;
+    let valid = true;
+    step.querySelectorAll('[required]').forEach((field) => {
+      const fieldWrap = field.closest('.field');
+      if (!fieldWrap) return;
+      let fieldValid = true;
+
+      if (field.type === 'radio') {
+        const group = form.querySelectorAll('[name="' + field.name + '"]');
+        const anyChecked = Array.from(group).some((g) => g.checked);
+        fieldValid = anyChecked;
+      } else if (field.type === 'checkbox') {
+        fieldValid = field.checked;
+      } else if (field.type === 'email') {
+        fieldValid = field.value.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(field.value.trim());
+      } else {
+        fieldValid = field.value.trim() !== '';
+      }
+
+      if (!fieldValid) {
+        fieldWrap.classList.add('field--error');
+        valid = false;
+      } else {
+        fieldWrap.classList.remove('field--error');
+      }
+    });
+    return valid;
+  }
+
+  // Step navigation
+  function goToStep(n) {
+    if (n < 1 || n > TOTAL_STEPS) return;
+    stepEls.forEach((s) => s.classList.remove('is-active'));
+    const target = form.querySelector('.step[data-step="' + n + '"]');
+    if (target) {
+      target.classList.add('is-active');
+      currentStep = n;
+      stepCurrent.textContent = n;
+      progressFill.style.width = (n / TOTAL_STEPS * 100) + '%';
+      // Scroll to top of form (smooth)
+      const app = document.getElementById('application');
+      if (app) {
+        const offset = 80;
+        const y = app.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      }
+      // Focus first input for keyboard users
+      setTimeout(() => {
+        const firstField = target.querySelector('input:not([type="radio"]):not([type="checkbox"]), textarea, select');
+        if (firstField) firstField.focus({ preventScroll: true });
+      }, 600);
+      // If step 8, render review
+      if (n === 8) renderReview();
+    }
+  }
+
+  // Button handlers
+  form.addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-action]');
+    if (!btn) return;
+    const action = btn.dataset.action;
+    if (action === 'next') {
+      if (validateStep(currentStep)) {
+        saveDraft();
+        goToStep(currentStep + 1);
+      } else {
+        // Scroll to first error
+        const firstError = form.querySelector('.step.is-active .field--error');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    } else if (action === 'back') {
+      saveDraft();
+      goToStep(currentStep - 1);
+    }
+  });
+
+  // Live autosave + char counts
+  form.addEventListener('input', (e) => {
+    saveDraft();
+    if (e.target.tagName === 'TEXTAREA') updateCharCounts();
+  });
+  form.addEventListener('change', () => saveDraft());
+
+  // --------------------------------------------------------------------
+  // Review summary
+  // --------------------------------------------------------------------
+  const FIELD_LABELS = {
+    firstname: 'First name',
+    lastname: 'Last name',
+    email: 'Email',
+    phone: 'Phone',
+    location: 'Location',
+    birthyear: 'Year of birth',
+    identity: 'Self-description',
+    web: 'Website / profile',
+    work: 'Work',
+    income: 'Income bracket',
+    founder_status: 'Founder status',
+    how_heard: 'How heard',
+    touched: 'What touches you',
+    bible_read: 'Concept Bible',
+    ns_state: 'Nervous system state',
+    practices: 'Practices',
+    mh_history: 'Mental health history',
+    tier: 'Tier',
+    payment: 'Payment preference',
+    visa: 'Visa',
+    sessions: 'Sessions per year',
+    living: 'Living arrangement',
+    guest: 'Possible guest',
+    hope: 'What you hope to receive',
+    bring: 'What you might bring'
+  };
+  const GROUPS = {
+    'Who you are': ['firstname','lastname','email','phone','location','birthyear','identity','web'],
+    'What you do': ['work','income','founder_status'],
+    'Why Yi Chamber': ['how_heard','touched','bible_read'],
+    'Your nervous system': ['ns_state','practices','mh_history'],
+    'The commitment': ['tier','payment','visa','sessions'],
+    'Relational context': ['living','guest'],
+    'The intangible': ['hope','bring']
+  };
+
+  function renderReview() {
+    const wrap = document.getElementById('review-summary');
+    let html = '';
+    const data = collectData();
+    Object.keys(GROUPS).forEach((groupName) => {
+      html += '<div class="review__group">';
+      html += '<h5 class="review__group-title">' + groupName + '</h5>';
+      GROUPS[groupName].forEach((key) => {
+        const label = FIELD_LABELS[key];
+        let value = data[key];
+        if (Array.isArray(value)) value = value.join(', ');
+        const empty = !value || value === '';
+        html += '<dl class="review__row' + (empty ? ' review__row--empty' : '') + '">';
+        html += '<dt>' + label + '</dt>';
+        html += '<dd>' + (empty ? '—' : escapeHtml(String(value))) + '</dd>';
+        html += '</dl>';
+      });
+      html += '</div>';
+    });
+    wrap.innerHTML = html;
+  }
+
+  function collectData() {
+    const data = {};
+    new FormData(form).forEach((v, k) => {
+      if (data[k] !== undefined) {
+        if (Array.isArray(data[k])) data[k].push(v);
+        else data[k] = [data[k], v];
+      } else {
+        data[k] = v;
+      }
+    });
+    return data;
+  }
+
+  function escapeHtml(str) {
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  // --------------------------------------------------------------------
+  // Submit
+  // --------------------------------------------------------------------
+  const submitBtn = document.getElementById('submit-btn');
+  submitBtn.addEventListener('click', () => {
+    if (!validateStep(8)) {
+      const firstError = form.querySelector('.step.is-active .field--error');
+      if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      return;
+    }
+
+    const data = collectData();
+    const firstName = data.firstname || '';
+    const lastName = data.lastname || '';
+    const tier = data.tier || 'not specified';
+
+    let body = 'Application to the Council of Ten\n';
+    body += '====================================\n\n';
+    body += 'Submitted: ' + new Date().toISOString() + '\n\n';
+
+    Object.keys(GROUPS).forEach((groupName) => {
+      body += '--- ' + groupName.toUpperCase() + ' ---\n';
+      GROUPS[groupName].forEach((key) => {
+        const label = FIELD_LABELS[key];
+        let value = data[key];
+        if (Array.isArray(value)) value = value.join(', ');
+        body += label + ': ' + (value || '—') + '\n';
+      });
+      body += '\n';
+    });
+
+    body += '--- CONFIRMATIONS ---\n';
+    body += 'Understands material: ' + (data.confirm_understand ? 'yes' : 'no') + '\n';
+    body += 'Prepared with capital: ' + (data.confirm_capital ? 'yes' : 'no') + '\n';
+    body += 'Will visit Hoi An: ' + (data.confirm_visit ? 'yes' : 'no') + '\n';
+    body += 'Understands Council closure: ' + (data.confirm_council ? 'yes' : 'no') + '\n\n';
+    body += '— Sent via yichamber.com/apply';
+
+    const subject = 'Application to the Council — ' + firstName + ' ' + lastName + ' — ' + tier;
+    const mailto = 'mailto:inquire@yichamber.com'
+      + '?subject=' + encodeURIComponent(subject)
+      + '&body=' + encodeURIComponent(body);
+
+    // Open email client
+    window.location.href = mailto;
+
+    // After a short delay, take user to thanks page
+    // (so even if mail client doesn't open, they reach confirmation)
+    setTimeout(() => {
+      // Clear draft so they can start fresh next time
+      try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+      window.location.href = 'apply-thanks.html';
+    }, 800);
+  });
+
+  // --------------------------------------------------------------------
+  // Init
+  // --------------------------------------------------------------------
+  loadDraft();
+  updateCharCounts();
+
+})();
+</script>
+
+</body>
+</html>

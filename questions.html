@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#F4EFE6" />
+
+<title>Questions · Yi Chamber</title>
+<meta name="description" content="What people ask before joining Yi Chamber. Honest answers on practice, commitment, founder, and the limits of what we claim." />
+<meta name="author" content="Steven Alber" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:site_name" content="Yi Chamber" />
+<meta property="og:title" content="Questions · Yi Chamber" />
+<meta property="og:description" content="Honest answers to what people ask before joining Yi Chamber." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yichamber.com/questions.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="canonical" href="https://yichamber.com/questions.html" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --ink: #1A1A1A;
+  --rice: #F4EFE6;
+  --bone: #EDE7D9;
+  --brass: #9C7B3C;
+  --brass-dim: #7A5F2D;
+  --cinnabar: #8B2E1F;
+  --graphite: #3A3A3A;
+  --patina: #6B5D45;
+  --font-display: 'EB Garamond', Georgia, serif;
+  --font-body: 'IBM Plex Sans', system-ui, sans-serif;
+  --font-cjk: 'Noto Serif TC', 'EB Garamond', serif;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --section-pad-x: clamp(1.5rem, 5vw, 4rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--rice);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--brass); color: var(--rice); }
+
+/* Topbar */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: clamp(1rem, 2.2vw, 1.6rem) var(--section-pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(244, 239, 230, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(156, 123, 60, 0.15);
+}
+.topbar__back {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.65);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: color 400ms var(--ease);
+}
+.topbar__back:hover { color: var(--brass); }
+.topbar__back-arrow {
+  display: inline-block;
+  width: 16px;
+  height: 1px;
+  background: currentColor;
+  position: relative;
+}
+.topbar__back-arrow::after {
+  content: '';
+  position: absolute;
+  left: 0; top: -3px;
+  width: 7px; height: 7px;
+  border-left: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+.topbar__seal {
+  font-family: var(--font-cjk);
+  font-size: 1.05rem;
+  color: var(--brass);
+  letter-spacing: 0.4em;
+}
+@media (max-width: 720px) {
+  .topbar__back span:not(.topbar__back-arrow) { display: none; }
+}
+
+/* Page */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: clamp(7rem, 14vw, 10rem) var(--section-pad-x) clamp(4rem, 8vw, 6rem);
+}
+
+.page__overline {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.page__overline::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(156, 123, 60, 0.3);
+}
+
+.page__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  line-height: 1.05;
+  color: var(--ink);
+  margin: 0 0 0.8rem;
+  letter-spacing: -0.01em;
+}
+.page__title em {
+  font-style: italic;
+  color: var(--brass);
+}
+.page__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  color: var(--patina);
+  margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.page__lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.5vw, 1.3rem);
+  line-height: 1.6;
+  color: var(--graphite);
+  margin: 0 0 clamp(3rem, 6vw, 4rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  border-bottom: 1px solid rgba(156, 123, 60, 0.2);
+}
+
+/* Question groups */
+.q-group {
+  margin-bottom: clamp(3rem, 6vw, 4rem);
+}
+.q-group__heading {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin: 0 0 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(156, 123, 60, 0.2);
+}
+
+.q {
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+}
+.q__number {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--brass);
+  font-size: 0.95rem;
+  letter-spacing: 0.2em;
+  margin-bottom: 0.4rem;
+}
+.q__question {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.2vw, 1.7rem);
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 0 0 1.2rem;
+}
+.q p {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0 0 1rem;
+}
+.q p em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1em;
+  color: var(--brass-dim);
+}
+.q p:last-child { margin-bottom: 0; }
+
+.q__pullquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: var(--graphite);
+  margin: 1.5rem 0;
+  padding: 0 0 0 1.2rem;
+  border-left: 2px solid var(--brass);
+}
+
+/* Closing block */
+.closing {
+  margin-top: clamp(4rem, 8vw, 6rem);
+  padding-top: clamp(3rem, 5vw, 4rem);
+  border-top: 1px solid rgba(156, 123, 60, 0.2);
+  text-align: center;
+}
+.closing__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  line-height: 1.2;
+  margin: 0 0 1rem;
+  color: var(--ink);
+}
+.closing__title em {
+  font-style: italic;
+  color: var(--brass);
+}
+.closing__body {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--graphite);
+  max-width: 44ch;
+  margin: 0 auto 2.5rem;
+}
+.closing__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--rice);
+  background: var(--cinnabar);
+  padding: 1.1rem 2.4rem 1.05rem;
+  border: 1px solid var(--cinnabar);
+  transition: background 500ms var(--ease);
+}
+.closing__cta:hover { background: #6B1F12; }
+.closing__cta-arrow {
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  position: relative;
+  transition: transform 400ms var(--ease);
+}
+.closing__cta-arrow::after {
+  content: '';
+  position: absolute;
+  right: 0; top: -3px;
+  width: 7px; height: 7px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(-45deg);
+}
+.closing__cta:hover .closing__cta-arrow { transform: translateX(4px); }
+
+.closing__seal {
+  font-family: var(--font-cjk);
+  font-size: 1.6rem;
+  letter-spacing: 0.5em;
+  color: var(--cinnabar);
+  display: block;
+  margin: clamp(2.5rem, 4vw, 3rem) 0 0;
+}
+
+/* Footer */
+.footer {
+  background: var(--ink);
+  color: var(--patina);
+  padding: 3rem var(--section-pad-x) 1.8rem;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.footer__seal {
+  font-family: var(--font-cjk);
+  font-size: 1rem;
+  letter-spacing: 0.4em;
+  color: var(--brass);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+.footer__links {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.footer__links a {
+  color: var(--bone);
+  transition: color 400ms var(--ease);
+}
+.footer__links a:hover { color: var(--brass); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="topbar__back" aria-label="Back to Yi Chamber">
+    <span class="topbar__back-arrow" aria-hidden="true"></span>
+    <span>Yi Chamber</span>
+  </a>
+  <a href="index.html" class="topbar__seal" aria-label="Yi Chamber">易 室</a>
+</header>
+
+<main>
+<article class="page">
+
+  <div class="page__overline">Before you ask</div>
+  <h1 class="page__title">Questions <em>people ask</em>.</h1>
+  <p class="page__subtitle">Honest answers, in the order they tend to arrive.</p>
+
+  <p class="page__lede">A handful of the questions that arrive most often, with answers that try to respect the time it took to ask them. We add to this page when something is asked twice. Nothing here is final &mdash; if a question you have is missing, write to inquire@yichamber.com.</p>
+
+  <!-- THE PRACTICE -->
+  <section class="q-group">
+    <h2 class="q-group__heading">The practice</h2>
+
+    <div class="q">
+      <div class="q__number">I</div>
+      <h3 class="q__question">Is this wellness, therapy, or something else?</h3>
+      <p>Something else. Yi Chamber is a structured intervention into the autonomic nervous system, calibrated against three thousand years of refinement of the Yi Jing and three decades of polyvagal research. We use the word <em>rehabilitation</em> rather than wellness, because the population we serve is not ill in any clinical sense &mdash; they are dysregulated by the conditions of contemporary life.</p>
+      <p>We do not diagnose. We do not prescribe. We do not promise cure. We offer a sustained, structured practice over years, with measurable autonomic outcomes in members who attend regularly. That is the entire claim, and we hold to it.</p>
+    </div>
+
+    <div class="q">
+      <div class="q__number">II</div>
+      <h3 class="q__question">What actually happens in a session?</h3>
+      <p>A session runs one hundred and ten minutes. You arrive at the Yi Bar for fifteen minutes of settling. You then move to the Yarrow Room, where you formulate a question or present-moment state and cast a hexagram &mdash; three antique coins, six tosses, one drawing. The hexagram that arises is your hexagram for the session.</p>
+      <p>You descend to the Lower Chamber for the lower trigram &mdash; twenty-five minutes of low-frequency Tibetan bowls and direct vibrotactile stimulation from a stone platform. You then ascend to the Upper Chamber for the upper trigram &mdash; quartz crystal bowls, higher frequencies, light through bamboo blinds. The session closes with integration at the Yi Bar, where the host hands you a written interpretation of your hexagram.</p>
+      <p>You take the scroll home. Some members keep walls of them.</p>
+    </div>
+
+    <div class="q">
+      <div class="q__number">III</div>
+      <h3 class="q__question">Do I need to believe in the Yi Jing for this to work?</h3>
+      <p>No. The acoustic and vibrotactile elements of a session affect the autonomic nervous system whether you believe in anything or not &mdash; the mechanism is anatomical, not metaphysical. The Yi Jing provides the interpretive framework that gives the experience meaning and durability, which research on ritual and narrative therapy consistently shows is the difference between a temporary biochemical event and a lasting change.</p>
+      <p>If you are intellectually serious and skeptical, this is the right place. If you require belief to feel safe in a healing space, you will probably find Yi Chamber too cold.</p>
+    </div>
+  </section>
+
+  <!-- THE COMMITMENT -->
+  <section class="q-group">
+    <h2 class="q-group__heading">The commitment</h2>
+
+    <div class="q">
+      <div class="q__number">IV</div>
+      <h3 class="q__question">What is the difference between the Council and the open tiers?</h3>
+      <p>The Council of Ten is the founding cohort &mdash; ten seats, contributing capital that funds the building of the original space. Council members receive lifetime Adept membership and their names are inseparable from the project for as long as it exists. Once the tenth seat is filled, the Council closes forever.</p>
+      <p>The open tiers &mdash; Initiate, Pilgrim, and Adept &mdash; are the standing membership categories. They open after the Council is sealed and remain open within the capacity of the founding location, capped at approximately three hundred active members.</p>
+      <p>The Council is a one-time architectural decision. The open tiers are a renewable annual practice. Most people who can afford to begin at Council level should consider whether they want to anchor at the founding. Most people who cannot are better served by Pilgrim or Adept, which carry depth without the founding-tier capital.</p>
+    </div>
+
+    <div class="q">
+      <div class="q__number">V</div>
+      <h3 class="q__question">Do I have to come to Hoi An?</h3>
+      <p>For now, yes. The founding location is Hoi An, and the chambers cannot be replicated by video. Members travel from across Asia, Europe, the Gulf, and North America. The cost of regular travel is part of the practice and part of the cost of membership &mdash; we do not pretend otherwise.</p>
+      <p>Future locations may follow, on a horizon of years, in cities chosen for cultural depth rather than market opportunity. Founding Patrons receive first access to any future location.</p>
+    </div>
+
+    <div class="q">
+      <div class="q__number">VI</div>
+      <h3 class="q__question">What if I cannot commit at any tier right now?</h3>
+      <p>You can join the waitlist. After the Council closes and the open tiers fill to capacity, the waitlist becomes the only route in. It is not a marketing gimmick &mdash; the founding location is genuinely capped, and we do not pursue growth as a virtue.</p>
+      <p>Write to inquire@yichamber.com and ask to be added. You will receive occasional letters from the founder &mdash; not promotional material, but essays on what the project is becoming. When a seat opens, you will be among the first to know.</p>
+    </div>
+  </section>
+
+  <!-- THE FOUNDER -->
+  <section class="q-group">
+    <h2 class="q-group__heading">The founder</h2>
+
+    <div class="q">
+      <div class="q__number">VII</div>
+      <h3 class="q__question">Who is Steven Alber, and why should I trust him with this?</h3>
+      <p>Steven Alber is a writer, publisher, and infrastructure designer who has spent the past two decades primarily in publishing, media, and the design of protocols at civilisational scale. His most recent work is in biological capital verification, where he has built protocols for measuring and authenticating biological assets at national-policy level.</p>
+      <p>He is not a healer. He is not a spiritual teacher. He does not claim enlightenment. <em>If you are looking for a guru, he is the wrong person.</em></p>
+      <p>His role at Yi Chamber is structural: ensuring the system holds, the standards remain high, and the integrity of the project is not compromised by the temptations of growth. The healing itself is done by trained practitioners working within the architecture he has built. His full letter is at <a href="founder.html" style="color: var(--brass); text-decoration: underline; text-decoration-color: rgba(156, 123, 60, 0.4); text-underline-offset: 4px;">founder.html</a>.</p>
+    </div>
+
+    <div class="q">
+      <div class="q__number">VIII</div>
+      <h3 class="q__question">Who else is involved? Practitioners, advisors, the team?</h3>
+      <p>The team is small and being assembled with care. A resident bowl-master and acoustic practitioner. A tea-master trained in classical Chinese ceremony. A Saigon-trained mixologist for the Yi Bar evening service. Visiting Yi Jing scholars and polyvagal-informed therapists on a rotating basis.</p>
+      <p>We are also in private conversation with a small number of internationally recognised figures &mdash; in polyvagal research, in Yi Jing scholarship, in acoustic architecture, in high-end hospitality. These conversations are confidential and may or may not become public advisorships. We do not announce affiliations before they exist.</p>
+      <p>When the team is complete and ready to be named, they will be named. Until then, the founder is the public face, and that is sufficient.</p>
+    </div>
+  </section>
+
+  <!-- THE LIMITS -->
+  <section class="q-group">
+    <h2 class="q-group__heading">The limits</h2>
+
+    <div class="q">
+      <div class="q__number">IX</div>
+      <h3 class="q__question">What does the science actually support &mdash; and what does it not?</h3>
+      <p>Supported: acute reduction in cortisol; measurable improvement in heart rate variability; subjective reports of reduced anxiety, improved sleep, and better emotional regulation; observable shifts in brainwave activity during and after sessions; sustained autonomic regulation in members who attend regularly over months.</p>
+      <p>Not supported, and therefore not claimed: that specific frequencies repair DNA; that sound cures cancer or serious organic disease; that exposure to particular Hertz values raises consciousness to higher dimensional planes; that sound activates dormant strands of DNA; that the Solfeggio frequencies have ancient biblical provenance.</p>
+      <p class="q__pullquote">Yi Chamber works with what is established, and is content to let the established be remarkable enough &mdash; because it is.</p>
+    </div>
+
+    <div class="q">
+      <div class="q__number">X</div>
+      <h3 class="q__question">Is this safe if I am in mental health treatment?</h3>
+      <p>Generally yes, in coordination with your clinician. We do not replace medicine. We are an adjunct, and we operate as one. Members in active care for depression, anxiety, PTSD, or related conditions are welcome, provided their clinician is informed and the practice is integrated into their care plan rather than substituting for it.</p>
+      <p>We do not accept members in acute psychiatric crisis. If you are presently in such a state, the right entry point is clinical, not us. We are happy to remain in correspondence and welcome you when you are stable.</p>
+    </div>
+
+    <div class="q">
+      <div class="q__number">XI</div>
+      <h3 class="q__question">How is this different from a sound bath?</h3>
+      <p>A sound bath is an evening of pleasant acoustic immersion, typically uncalibrated, often beautiful, occasionally transformative, rarely structured. Yi Chamber is a multi-year protocol with a defined mapping of sixty-four hexagrams to acoustic signatures, a physical architecture designed around the protocol, trained practitioners, and a written interpretive framework that consolidates each session into a member&rsquo;s long-term practice.</p>
+      <p>Sound baths are good. They are not what we do.</p>
+    </div>
+  </section>
+
+  <!-- THE LOGISTICS -->
+  <section class="q-group">
+    <h2 class="q-group__heading">The logistics</h2>
+
+    <div class="q">
+      <div class="q__number">XII</div>
+      <h3 class="q__question">When does Yi Chamber actually open?</h3>
+      <p>The founding location opens in autumn 2026. The Council&rsquo;s founding ritual is held in Hoi An on the opening week, and all ten founding members are invited &mdash; with flights at their own expense, accommodation arranged through Yi Chamber.</p>
+      <p>Before the opening, founding members receive the Concept Bible, periodic founder&rsquo;s letters, and any closed-circle materials produced during the build-out. Council members may also visit the site in progress, by appointment.</p>
+    </div>
+
+    <div class="q">
+      <div class="q__number">XIII</div>
+      <h3 class="q__question">How do payment, contracts, and refunds work?</h3>
+      <p>Council members enter under a founding agreement that specifies the contribution, the lifetime Adept benefits, and the conditions of those benefits. Payment options include single transfer, two installments over three months, or four installments over twelve months. Refunds within the first thirty days of agreement are honoured in full; after that, the contribution is committed.</p>
+      <p>Bank details and contract draft are provided after the application has been accepted and an introductory call has taken place. We do not collect payment before a conversation has happened.</p>
+    </div>
+
+    <div class="q">
+      <div class="q__number">XIV</div>
+      <h3 class="q__question">Will I be photographed, filmed, or named publicly?</h3>
+      <p>Not without your written agreement. The founding cohort is not promoted in press. Names appear on the Founders&rsquo; Wall in Hoi An &mdash; a physical, hand-carved record &mdash; not in marketing material. Members who wish to speak publicly about their participation are welcome to do so on their own terms. Members who wish for full privacy receive it.</p>
+      <p>No part of a session is ever recorded for media purposes. Anonymised, aggregate biometric data may be published in due course &mdash; only with consent, and only for the purpose of demonstrating outcomes honestly.</p>
+    </div>
+  </section>
+
+  <!-- CLOSING -->
+  <div class="closing">
+    <h2 class="closing__title">If your question is <em>not here</em>.</h2>
+    <p class="closing__body">Write to inquire@yichamber.com. Steven reads everything personally and replies within seven days. There is no team, no CRM, no algorithm. One person, reading carefully.</p>
+    <a href="apply.html" class="closing__cta">
+      <span>Apply to the Council</span>
+      <span class="closing__cta-arrow" aria-hidden="true"></span>
+    </a>
+    <span class="closing__seal" aria-label="Yi Shi seal">易 室</span>
+  </div>
+
+</article>
+</main>
+
+<footer class="footer">
+  <span class="footer__seal" aria-label="Yi Shi seal">易 室</span>
+  &copy; MMXXVI Yi Chamber &middot; Hoi An &middot; Vietnam
+  <div class="footer__links">
+    <a href="index.html">The Chamber</a>
+    <a href="founder.html">Founder&rsquo;s Letter</a>
+    <a href="apply.html">Apply to the Council</a>
+    <a href="mailto:inquire@yichamber.com">inquire@yichamber.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
