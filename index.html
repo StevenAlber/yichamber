@@ -3,24 +3,71 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#1A1A1A" />
+<meta name="format-detection" content="telephone=no" />
 
 <title>Yi Chamber · The first sound architecture built on the Yi Jing</title>
-<meta name="description" content="A private sound architecture in Hoi An, Vietnam. The first in the world built on the three-thousand-year-old structure of the Yi Jing. Opening 2026." />
+<meta name="description" content="A private sound architecture in Hoi An, Vietnam. The first built on the three-thousand-year-old structure of the Yi Jing. Eight calibrated frequencies, sixty-four hexagrams, one hundred and ten minutes. Opening 2026." />
+<meta name="keywords" content="Yi Chamber, Yi Jing, I Ching, sound architecture, sound healing, Hoi An, Vietnam, polyvagal theory, nervous system regulation, hexagram, trigram, Tibetan singing bowls, quartz crystal bowls, founding membership" />
+<meta name="author" content="Steven Alber" />
+<meta name="robots" content="index, follow, max-image-preview:large" />
 
+<!-- Open Graph -->
+<meta property="og:site_name" content="Yi Chamber" />
 <meta property="og:title" content="Yi Chamber · 易室" />
-<meta property="og:description" content="The first sound architecture built on the Yi Jing. Hoi An, 2026." />
+<meta property="og:description" content="The first sound architecture built on the Yi Jing. Hoi An, Vietnam. Opening 2026." />
 <meta property="og:image" content="https://yichamber.com/assets/images/s2-yijing.webp" />
+<meta property="og:image:alt" content="An open Yi Jing showing the eight trigrams, beside antique Chinese coins and a calligraphy brush." />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yichamber.com" />
-<link rel="canonical" href="https://yichamber.com/" />
+<meta property="og:locale" content="en_GB" />
+
+<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Yi Chamber · 易室" />
+<meta name="twitter:description" content="The first sound architecture built on the Yi Jing. Hoi An, Vietnam. Opening 2026." />
+<meta name="twitter:image" content="https://yichamber.com/assets/images/s2-yijing.webp" />
 
+<link rel="canonical" href="https://yichamber.com/" />
+
+<!-- Favicons -->
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
 
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<!-- Structured data (schema.org) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Yi Chamber",
+  "alternateName": "易室",
+  "url": "https://yichamber.com",
+  "description": "A private sound architecture in Hoi An, Vietnam, built on the three-thousand-year-old structure of the Yi Jing. Opening 2026.",
+  "founder": {
+    "@type": "Person",
+    "name": "Steven Alber"
+  },
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Hoi An, Vietnam",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Hoi An",
+      "addressCountry": "VN"
+    }
+  },
+  "foundingDate": "2026",
+  "email": "inquire@yichamber.com",
+  "knowsAbout": ["Yi Jing", "I Ching", "Polyvagal theory", "Sound architecture", "Autonomic nervous system regulation"]
+}
+</script>
 
 <style>
 /* ========================================================================
@@ -177,12 +224,22 @@ a { color: inherit; text-decoration: none; }
 }
 .topbar__nav a:hover::after { width: 100%; }
 
+@media (max-width: 920px) {
+  .topbar__nav { gap: 1.25rem; }
+  .topbar__nav a { font-size: 0.68rem; letter-spacing: 0.2em; }
+  /* Tablet: hide three middle nav links */
+  .topbar__nav a:nth-child(2),
+  .topbar__nav a:nth-child(4),
+  .topbar__nav a:nth-child(5) { display: none; }
+}
 @media (max-width: 720px) {
   .topbar__nav { gap: 1.1rem; }
   .topbar__nav a { font-size: 0.66rem; letter-spacing: 0.18em; }
-  /* Mobile: hide some nav links */
+  /* Mobile: keep only The Chamber, Council, Inquire */
   .topbar__nav a:nth-child(2),
-  .topbar__nav a:nth-child(3) { display: none; }
+  .topbar__nav a:nth-child(3),
+  .topbar__nav a:nth-child(4),
+  .topbar__nav a:nth-child(5) { display: none; }
 }
 
 /* ========================================================================
@@ -1100,6 +1157,151 @@ a { color: inherit; text-decoration: none; }
 .s7__cta:hover::before { transform: translateY(0); }
 
 /* ========================================================================
+   SECTION 7B — THE OPEN TIERS
+   ======================================================================== */
+.s7b {
+  background: var(--bone);
+  color: var(--ink);
+  position: relative;
+}
+.s7b__header { max-width: 720px; margin: 0 auto clamp(3rem, 6vw, 4.5rem); text-align: center; }
+.s7b__header .section__overline { color: var(--brass); }
+.s7b__header .section__lede { margin-left: auto; margin-right: auto; color: var(--graphite); }
+
+.s7b__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1.5rem, 2.5vw, 2rem);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+@media (max-width: 920px) {
+  .s7b__grid { grid-template-columns: 1fr; max-width: 480px; }
+}
+
+.s7b__tier {
+  background: var(--rice);
+  padding: clamp(2rem, 3vw, 2.8rem) clamp(1.5rem, 2.5vw, 2.2rem);
+  border: 1px solid rgba(156, 123, 60, 0.18);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: border 500ms var(--ease), transform 500ms var(--ease), box-shadow 500ms var(--ease);
+}
+.s7b__tier:hover {
+  border-color: var(--brass);
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -24px rgba(26, 26, 26, 0.18);
+}
+.s7b__tier--featured {
+  border-color: rgba(156, 123, 60, 0.5);
+  background: linear-gradient(180deg, var(--rice) 0%, #F7F1E7 100%);
+}
+.s7b__tier--featured::before {
+  content: 'Recommended';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--brass);
+  color: var(--rice);
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 5px 14px 4px;
+}
+
+.s7b__tier-mark {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--brass);
+  letter-spacing: 0.3em;
+  margin-bottom: 0.6rem;
+}
+.s7b__tier-name {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.6rem, 2.2vw, 2rem);
+  color: var(--ink);
+  margin: 0 0 0.8rem;
+  line-height: 1.1;
+}
+.s7b__tier-price {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--brass);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+.s7b__tier-price span {
+  font-size: 0.85rem;
+  color: var(--patina);
+  font-style: normal;
+  letter-spacing: 0.05em;
+}
+.s7b__tier-cadence {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--patina);
+  margin: 0 0 1.5rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(156, 123, 60, 0.18);
+}
+.s7b__tier-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--graphite);
+  flex: 1;
+}
+.s7b__tier-list li {
+  position: relative;
+  padding-left: 1.2rem;
+}
+.s7b__tier-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.65em;
+  width: 6px;
+  height: 1px;
+  background: var(--brass);
+}
+.s7b__tier-note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--patina);
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(156, 123, 60, 0.12);
+}
+
+.s7b__footnote {
+  max-width: 640px;
+  margin: clamp(3rem, 5vw, 4rem) auto 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--patina);
+  padding-top: 2rem;
+  border-top: 1px solid rgba(156, 123, 60, 0.15);
+}
+.s7b__footnote p { margin: 0; }
+
+/* ========================================================================
    SECTION 8 — CLOSING / FOUNDER NOTE
    ======================================================================== */
 .s8 {
@@ -1136,8 +1338,31 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--patina);
-  margin-bottom: 3.5rem;
+  margin-bottom: 2rem;
 }
+.s8__founder-context {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--graphite);
+  max-width: 38ch;
+  margin: 0 auto 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(156, 123, 60, 0.2);
+}
+.s8__founder-link {
+  display: block;
+  margin-top: 1rem;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brass);
+  transition: color 400ms var(--ease);
+}
+.s8__founder-link:hover { color: var(--cinnabar); }
 .s8__seal {
   font-family: var(--font-cjk);
   font-size: 2rem;
@@ -1183,6 +1408,14 @@ a { color: inherit; text-decoration: none; }
   font-size: 0.95rem;
   color: var(--bone);
   max-width: 28ch;
+  margin: 0 0 1rem;
+}
+.footer__brand-loc {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--patina);
   margin: 0;
 }
 .footer__col h4 {
@@ -1216,11 +1449,18 @@ a { color: inherit; text-decoration: none; }
   border-top: 1px solid rgba(156, 123, 60, 0.2);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-family: var(--font-body);
   font-size: 0.72rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--patina);
+}
+.footer__cjk {
+  font-family: var(--font-cjk);
+  font-size: 0.9rem;
+  letter-spacing: 0.4em;
+  color: var(--brass);
 }
 @media (max-width: 720px) {
   .footer__bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
@@ -1354,6 +1594,8 @@ a { color: inherit; text-decoration: none; }
     <a href="#what">The Chamber</a>
     <a href="#journey">The Journey</a>
     <a href="#bowls">The Bowls</a>
+    <a href="#ritual">The Ritual</a>
+    <a href="#bar">The Bar</a>
     <a href="#council">Council</a>
     <a href="#contact">Inquire</a>
   </nav>
@@ -1398,7 +1640,7 @@ a { color: inherit; text-decoration: none; }
       <div class="hero__rule" aria-hidden="true"></div>
 
       <p class="hero__statement">
-        The first sound architecture in the world built on the three-thousand-year-old structure of the <em>Yi Jing</em>.
+        The first sound architecture built on the three-thousand-year-old structure of the <em>Yi Jing</em>.
       </p>
 
       <div class="hero__cta-wrap">
@@ -1408,8 +1650,6 @@ a { color: inherit; text-decoration: none; }
         </a>
       </div>
     </div>
-</main>
-
 
     <footer class="hero__footer">
       <div class="hero__location">
@@ -1695,8 +1935,8 @@ a { color: inherit; text-decoration: none; }
     <div class="s6__text reveal">
       <div class="section__overline">Section V &middot; The Bar</div>
       <h2 class="section__title">The session does not end. <em>It settles.</em></h2>
-      <p class="section__lede">After the chambers, the Yi Bar. Sixty-four beverages, each paired with a hexagram. Built around traditional Vietnamese tea-house principles, with house-made infusions, tinctures, and one slow cocktail at the end.</p>
-      <p class="section__lede" style="font-style: normal; font-family: var(--font-body); font-size: 0.95rem; color: var(--bone);">Bitter, sweet, salt, sour, umami, mineral &mdash; the five tastes mapped to the five elements, the elements mapped to the trigrams, the trigrams paired in your hexagram. The bar reads your reading.</p>
+      <p class="section__lede">After the chambers, the Yi Bar. Sixty-four beverages &mdash; thirty-two day teas and thirty-two evening preparations &mdash; one for each hexagram. Built around classical tea principles and the patient craft of infusion. The session continues at the bar.</p>
+      <p class="section__lede" style="font-style: normal; font-family: var(--font-body); font-size: 0.95rem; color: var(--bone);">Each drink is paired to its hexagram on three levels: ingredients chosen for their classical associations with the trigrams that compose it; active compounds calibrated to the autonomic state the session intends to extend; and visual presentation &mdash; vessel, colour, garnish &mdash; that mirrors the hexagram&rsquo;s structure. The bar reads your reading.</p>
     </div>
 
     <div class="s6__visual reveal reveal--delay-1" aria-hidden="true">
@@ -1774,6 +2014,72 @@ a { color: inherit; text-decoration: none; }
 </section>
 
 <!-- ============================================================
+     SECTION 7B — THE OPEN TIERS (after the Council is sealed)
+     ============================================================ -->
+<section id="tiers" class="section s7b">
+  <div class="grain"></div>
+  <div class="section__inner">
+
+    <div class="s7b__header reveal">
+      <div class="section__overline">Section VII &middot; The Open Tiers</div>
+      <h2 class="section__title">After the Council is sealed. <em>Three tiers, open to the wider circle.</em></h2>
+      <p class="section__lede">Active membership is capped at approximately three hundred individuals at the founding location. We do not pursue growth at the cost of depth. The cadence of practice matters more than the price.</p>
+    </div>
+
+    <div class="s7b__grid">
+
+      <article class="s7b__tier reveal">
+        <div class="s7b__tier-mark">I</div>
+        <h3 class="s7b__tier-name">Initiate</h3>
+        <div class="s7b__tier-price">&euro;&thinsp;1,800 <span>/ year</span></div>
+        <p class="s7b__tier-cadence">Four sessions per year &middot; one per quarter</p>
+        <ul class="s7b__tier-list">
+          <li>Seasonal cadence aligned to the classical calendar</li>
+          <li>Personal hexagram recording after each session</li>
+          <li>Monthly audio meditations</li>
+          <li>Pre-publication access to Yi Chamber writings</li>
+        </ul>
+        <div class="s7b__tier-note">The entry point. Designed to fit a life that is already full.</div>
+      </article>
+
+      <article class="s7b__tier s7b__tier--featured reveal reveal--delay-1">
+        <div class="s7b__tier-mark">II</div>
+        <h3 class="s7b__tier-name">Pilgrim</h3>
+        <div class="s7b__tier-price">&euro;&thinsp;4,500 <span>/ year</span></div>
+        <p class="s7b__tier-cadence">Twelve sessions per year &middot; one per month</p>
+        <ul class="s7b__tier-list">
+          <li>Eight-weekly mentor session with resident scholar</li>
+          <li>One three-day anchor retreat included</li>
+          <li>Personalised pattern reading across the year</li>
+          <li>Member community and library access</li>
+        </ul>
+        <div class="s7b__tier-note">The heart of Yi Chamber. The minimum cadence for serious change.</div>
+      </article>
+
+      <article class="s7b__tier reveal reveal--delay-2">
+        <div class="s7b__tier-mark">III</div>
+        <h3 class="s7b__tier-name">Adept</h3>
+        <div class="s7b__tier-price">&euro;&thinsp;9,800 <span>/ year</span></div>
+        <p class="s7b__tier-cadence">Twenty-four sessions per year &middot; twice monthly</p>
+        <ul class="s7b__tier-list">
+          <li>Monthly one-on-one mentor session</li>
+          <li>Two five-day anchor retreats included</li>
+          <li>Year-long hexagram protocol with the founder</li>
+          <li>Private celebration of significant personal events</li>
+        </ul>
+        <div class="s7b__tier-note">For members for whom Yi Chamber is a central practice.</div>
+      </article>
+
+    </div>
+
+    <div class="s7b__footnote reveal">
+      <p>Visitor sessions &mdash; for those passing through Hoi An without membership &mdash; are held at &euro;&thinsp;240 per session, subject to weekly capacity. Members may bring guests at &euro;&thinsp;180 per session.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================
      SECTION 8 — CLOSING / FOUNDER NOTE
      ============================================================ -->
 <section id="contact" class="section s8">
@@ -1784,9 +2090,15 @@ a { color: inherit; text-decoration: none; }
     </blockquote>
     <div class="s8__sig reveal">Steven Alber</div>
     <div class="s8__sig-meta reveal">Founder &middot; Yi Chamber</div>
+    <div class="s8__founder-context reveal">
+      Writer, publisher, and infrastructure designer. Works on biological capital verification at civilisational scale. Yi Chamber is built in parallel.
+      <a href="founder.html" class="s8__founder-link">Read the founder&rsquo;s letter &rarr;</a>
+    </div>
     <div class="s8__seal reveal" aria-label="Yi Shi seal">易 室</div>
   </div>
 </section>
+
+</main>
 
 <!-- ============================================================
      FOOTER
@@ -1798,15 +2110,7 @@ a { color: inherit; text-decoration: none; }
       <div class="footer__brand-name">YI CHAMBER</div>
       <span class="footer__brand-cjk">易 室</span>
       <p class="footer__brand-tag">The first sound architecture built on the three-thousand-year-old structure of the Yi Jing.</p>
-    </div>
-
-    <div class="footer__col">
-      <h4>Inquire</h4>
-      <ul>
-        <li><a href="mailto:inquire@yichamber.com">inquire@yichamber.com</a></li>
-        <li><a href="#council">Founding Circle</a></li>
-        <li><a href="#contact">Press &amp; Editorial</a></li>
-      </ul>
+      <p class="footer__brand-loc">Hoi An &middot; Vietnam &middot; opening MMXXVI</p>
     </div>
 
     <div class="footer__col">
@@ -1816,14 +2120,25 @@ a { color: inherit; text-decoration: none; }
         <li><a href="#journey">The Journey</a></li>
         <li><a href="#bowls">The Frequencies</a></li>
         <li><a href="#ritual">The Ritual</a></li>
+        <li><a href="#bar">The Yi Bar</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <h4>Membership</h4>
+      <ul>
+        <li><a href="#council">Council of Ten</a></li>
+        <li><a href="#tiers">Open Tiers</a></li>
+        <li><a href="founder.html">Founder&rsquo;s Letter</a></li>
+        <li><a href="mailto:inquire@yichamber.com">inquire@yichamber.com</a></li>
       </ul>
     </div>
 
   </div>
 
   <div class="footer__bottom">
-    <div>&copy; MMXXVI Yi Chamber &middot; Hoi An &middot; Vietnam</div>
-    <div>Hoi An &middot; Vietnam</div>
+    <div>&copy; MMXXVI Yi Chamber &middot; All rights reserved</div>
+    <div class="footer__cjk">易 室</div>
   </div>
 </footer>
 
@@ -1850,21 +2165,45 @@ a { color: inherit; text-decoration: none; }
     const isPastHero = heroBottom < 80;
     topbar.classList.toggle('is-scrolled', isPastHero);
 
-    // Determine background color of section currently under the topbar
-    // by sampling the element at y=40px from top-center
-    const probe = document.elementFromPoint(window.innerWidth / 2, (document.querySelector(".topbar")?.offsetHeight || 60) + 10);
+    // Determine background brightness of section currently under the topbar
+    // by sampling the element at the topbar's center
+    const probeY = (topbar.offsetHeight || 60) + 8;
+    const probe = document.elementFromPoint(window.innerWidth / 2, probeY);
     if (!probe) return;
+
+    // Walk up to find a section-like container, then read its computed bg
     const section = probe.closest('.section, .hero, .footer');
     if (!section) return;
 
-    const isDarkSection =
-      section.classList.contains('hero') ||
-      section.classList.contains('section--dark') ||
-      section.classList.contains('s3') ||
-      section.classList.contains('s5') ||
-      section.classList.contains('s6') ||
-      section.classList.contains('s7') ||
-      section.classList.contains('footer');
+    // Read computed background. For gradient sections this returns the
+    // start colour, which is good enough; we fall back to walking the DOM
+    // for an opaque ancestor if the section is transparent.
+    let bg = window.getComputedStyle(section).backgroundColor;
+    let walker = section;
+    while (bg === 'rgba(0, 0, 0, 0)' || bg === 'transparent') {
+      walker = walker.parentElement;
+      if (!walker) { bg = 'rgb(244, 239, 230)'; break; }
+      bg = window.getComputedStyle(walker).backgroundColor;
+    }
+
+    // Parse rgb() / rgba()
+    const m = bg.match(/\d+(\.\d+)?/g);
+    let isDarkSection = false;
+    if (m && m.length >= 3) {
+      const r = +m[0], g = +m[1], b = +m[2];
+      // Perceived luminance (Rec. 709 weights)
+      const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b;
+      isDarkSection = lum < 128;
+    } else {
+      // Fallback to class-based detection
+      isDarkSection =
+        section.classList.contains('hero') ||
+        section.classList.contains('section--dark') ||
+        section.classList.contains('s5') ||
+        section.classList.contains('s6') ||
+        section.classList.contains('s7') ||
+        section.classList.contains('footer');
+    }
 
     if (topbar.classList.contains('is-scrolled')) {
       topbar.classList.remove('is-dark');

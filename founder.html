@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#F4EFE6" />
+
+<title>Founder&rsquo;s Letter · Yi Chamber</title>
+<meta name="description" content="A note from the founder of Yi Chamber. Why this exists, what it is not, and what it asks of those who come to it." />
+<meta name="author" content="Steven Alber" />
+<meta name="robots" content="index, follow" />
+
+<meta property="og:site_name" content="Yi Chamber" />
+<meta property="og:title" content="Founder&rsquo;s Letter · Yi Chamber" />
+<meta property="og:description" content="A note from the founder. Why Yi Chamber exists." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yichamber.com/founder.html" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="canonical" href="https://yichamber.com/founder.html" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500&family=Noto+Serif+TC:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+:root {
+  --ink:       #1A1A1A;
+  --ink-deep:  #0F0F0F;
+  --rice:      #F4EFE6;
+  --bone:      #EDE7D9;
+  --brass:     #9C7B3C;
+  --brass-dim: #7A5F2D;
+  --ochre:     #8B5E3C;
+  --jade:      #4A5D4A;
+  --cinnabar:  #8B2E1F;
+  --graphite:  #3A3A3A;
+  --patina:    #6B5D45;
+
+  --font-display: 'EB Garamond', Georgia, serif;
+  --font-body:    'IBM Plex Sans', system-ui, sans-serif;
+  --font-cjk:     'Noto Serif TC', 'EB Garamond', serif;
+
+  --ease:     cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --section-pad-x: clamp(1.5rem, 5vw, 4rem);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  font-weight: 300;
+  color: var(--ink);
+  background: var(--rice);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.65;
+}
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--brass); color: var(--rice); }
+
+/* Topbar */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: clamp(1.1rem, 2.5vw, 1.8rem) var(--section-pad-x);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(244, 239, 230, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(156, 123, 60, 0.15);
+}
+.topbar__seal {
+  font-family: var(--font-cjk);
+  font-size: 1.1rem;
+  color: var(--brass);
+  letter-spacing: 0.4em;
+}
+.topbar__back {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(26, 26, 26, 0.7);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  transition: color 400ms var(--ease);
+}
+.topbar__back:hover { color: var(--brass); }
+.topbar__back-arrow {
+  display: inline-block;
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  position: relative;
+}
+.topbar__back-arrow::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -3px;
+  width: 7px;
+  height: 7px;
+  border-left: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg);
+}
+
+/* Letter container */
+.letter {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(7rem, 14vw, 10rem) var(--section-pad-x) clamp(5rem, 10vw, 8rem);
+  position: relative;
+}
+
+.letter__overline {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--brass);
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.letter__overline::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(156, 123, 60, 0.3);
+}
+
+.letter__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  color: var(--ink);
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+.letter__title em {
+  font-style: italic;
+  color: var(--brass);
+}
+.letter__subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+  color: var(--patina);
+  margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+}
+
+.letter__lede {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.15rem, 1.5vw, 1.3rem);
+  line-height: 1.55;
+  color: var(--graphite);
+  margin: 0 0 clamp(2.5rem, 5vw, 3.5rem);
+  padding-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  border-bottom: 1px solid rgba(156, 123, 60, 0.2);
+}
+
+.letter__h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 2.4vw, 1.9rem);
+  line-height: 1.2;
+  color: var(--ink);
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0 1rem;
+}
+.letter__h2:first-of-type { margin-top: 0; }
+
+.letter p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin: 0 0 1.4rem;
+}
+
+.letter p em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1em;
+  color: var(--brass-dim);
+}
+
+.letter__pullquote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  line-height: 1.4;
+  color: var(--ink);
+  margin: clamp(2.5rem, 5vw, 3.5rem) 0;
+  padding: 0 0 0 1.5rem;
+  border-left: 2px solid var(--brass);
+}
+
+.letter__sig {
+  margin-top: clamp(3.5rem, 6vw, 4.5rem);
+  padding-top: clamp(2.5rem, 5vw, 3rem);
+  border-top: 1px solid rgba(156, 123, 60, 0.2);
+}
+.letter__sig-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--ink);
+  margin: 0 0 0.4rem;
+}
+.letter__sig-meta {
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--patina);
+  margin: 0 0 1.5rem;
+}
+.letter__sig-place {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--graphite);
+  margin: 0 0 2rem;
+}
+.letter__seal {
+  font-family: var(--font-cjk);
+  font-size: 1.8rem;
+  letter-spacing: 0.5em;
+  color: var(--cinnabar);
+  display: block;
+}
+
+.letter__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: clamp(3rem, 6vw, 4rem);
+  font-family: var(--font-body);
+  font-size: 0.74rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brass);
+  padding: 1rem 2rem;
+  border: 1px solid rgba(156, 123, 60, 0.4);
+  transition: all 500ms var(--ease);
+}
+.letter__back:hover {
+  border-color: var(--brass);
+  background: rgba(156, 123, 60, 0.04);
+}
+
+/* Footer (minimal) */
+.footer-mini {
+  background: var(--ink);
+  color: var(--bone);
+  padding: 2.5rem var(--section-pad-x);
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--patina);
+}
+.footer-mini__seal {
+  font-family: var(--font-cjk);
+  font-size: 1rem;
+  letter-spacing: 0.4em;
+  color: var(--brass);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 720px) {
+  .topbar__back span:not(.topbar__back-arrow) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a href="index.html" class="topbar__back" aria-label="Back to Yi Chamber">
+    <span class="topbar__back-arrow" aria-hidden="true"></span>
+    <span>Yi Chamber</span>
+  </a>
+  <a href="index.html" class="topbar__seal" aria-label="Yi Chamber">易 室</a>
+</header>
+
+<main>
+
+<article class="letter">
+
+  <div class="letter__overline">A note from the founder</div>
+
+  <h1 class="letter__title">Why I am <em>building this</em>.</h1>
+  <p class="letter__subtitle">On the inadequacy of contemporary wellness, the depth of the Yi Jing, and the small infrastructure built against a strong current.</p>
+
+  <p class="letter__lede">I am not a healer. I am not a spiritual teacher. I am not enlightened in any sense recognised by traditions that have a serious understanding of what enlightenment means. I have spent the past two decades primarily in writing, publishing, and the design of infrastructure &mdash; most recently in the field of biological capital verification, where I have worked on protocols for measuring and authenticating biological assets at civilisational scale.</p>
+
+  <h2 class="letter__h2">Two reasons</h2>
+
+  <p>I am building Yi Chamber for two reasons.</p>
+
+  <p>The first is that I have watched, over the past decade, the people closest to me &mdash; my friends, the women in my life, the mothers and creators and operators in my professional network &mdash; carry an autonomic load that their bodies were never designed to sustain. I have watched them try yoga and meditation apps and ayahuasca retreats and prescriptions and therapy and silent retreats. Some of these helped. None of them fully resolved the underlying problem. Most produced temporary relief followed by a return to the original state, often worse, because the contrast with regulated state made the dysregulated state more painful.</p>
+
+  <p>The second reason is that I have been a long student of the Yi Jing &mdash; not at the level of a scholar, but seriously enough, over years, to recognise that its structural intelligence is unusual. I have used it as a tool for thinking. I have cast hexagrams at significant moments in my own life and consistently found that the result, properly interpreted, illuminated something I had not been able to articulate to myself. I have come to believe that this system is one of the genuine intellectual achievements of human civilisation, comparable to formal logic or differential calculus.</p>
+
+  <p>The decision to combine these two understandings &mdash; the inadequacy of contemporary wellness for the people I love, and the depth of the Yi Jing as a structural framework &mdash; into a single physical project is what produced Yi Chamber.</p>
+
+  <h2 class="letter__h2">What I bring, and what I do not</h2>
+
+  <p>I bring a track record of building things that work at civilisational scale. I have founded media outlets that serve substantial audiences. I have designed protocols that have been seriously considered at the level of national policy. I have built brands that hold value through the test of time. I bring a disciplined approach to communication, a refusal to oversell, and an unusually wide network across the worlds of finance, philosophy, journalism, and infrastructure.</p>
+
+  <p>I do not bring the kind of charisma that traditionally defines spiritual leadership. I am not warm in the way that healing practitioners are often warm. I do not have a guru&rsquo;s biography. <em>If you are looking for someone to project your transformation onto, I am the wrong person.</em></p>
+
+  <p>I bring the work, the system, and the discipline to build it. The healing itself will be done by the people we hire to do it &mdash; practitioners trained in the relevant traditions, working with the architecture we have built, with the members who choose to engage. My role is to ensure that the structure holds, that the standards remain high, and that the integrity of the project remains uncompromised by the temptations of growth.</p>
+
+  <blockquote class="letter__pullquote">A place to remember what the nervous system was designed to feel like.</blockquote>
+
+  <h2 class="letter__h2">A personal word</h2>
+
+  <p>I am writing this from Vietnam in the spring of 2026. My children are five and three. They are not aware of Yi Chamber &mdash; they know that I work, sometimes intensely, but the specifics are beyond what they need to know. I am building this project, in part, with the understanding that my children will inherit a world in which the conditions for autonomic dysregulation will only intensify. The information environment will not become less adversarial. The pace of change will not slow. The challenge of remaining a coherent human nervous system inside a chaotic information ecology will only grow.</p>
+
+  <p>Yi Chamber is one small infrastructure built against this current. It is not a solution at civilisational scale; I am building those elsewhere. It is a single, beautiful, rigorous space in which a small number of people can come to remember what their nervous systems are designed to feel like. From this they may take what they need into the rest of their lives.</p>
+
+  <p>If, twenty years from now, two hundred women across the world have made Yi Chamber a sustained part of their lives &mdash; have come repeatedly, have allowed it to retrain their autonomic systems over years, have brought what they have learned here back into their families and their work and their political engagement and their art &mdash; I will consider the project to have succeeded.</p>
+
+  <p>If it scales further, that is welcome. <em>But it does not need to.</em></p>
+
+  <p>This is a contribution to a long civilisational conversation about how human beings inhabit their own bodies. The Yi Jing has been part of that conversation for three thousand years. We are adding one small chapter.</p>
+
+  <div class="letter__sig">
+    <div class="letter__sig-name">Steven Alber</div>
+    <div class="letter__sig-meta">Founder &middot; Yi Chamber</div>
+    <div class="letter__sig-place">Hoi An &middot; May 2026</div>
+    <span class="letter__seal" aria-label="Yi Shi seal">易 室</span>
+  </div>
+
+  <a href="index.html#council" class="letter__back">
+    <span>Return to the Chamber</span>
+    <span class="topbar__back-arrow" style="transform: rotate(180deg);" aria-hidden="true"></span>
+  </a>
+
+</article>
+
+</main>
+
+<footer class="footer-mini">
+  <span class="footer-mini__seal" aria-label="Yi Shi seal">易 室</span>
+  &copy; MMXXVI Yi Chamber &middot; Hoi An &middot; Vietnam
+</footer>
+
+</body>
+</html>
