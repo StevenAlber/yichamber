@@ -1921,7 +1921,7 @@ img { max-width: 100%; height: auto; display: block; }
           <!-- populated by JS -->
         </div>
 
-        <p class="submit-note">When you press the cinnabar button, your draft email will open in your mail application, pre-filled with your application. You will then send it. Nothing leaves your computer until you do.</p>
+        <p class="submit-note">When you press the cinnabar button, your application is sent directly to the founder. You will see a confirmation page shortly afterward. There is no mail client to open.</p>
 
         <div class="step__nav">
           <button type="button" class="btn btn--back" data-action="back">
@@ -2247,59 +2247,79 @@ img { max-width: 100%; height: auto; display: block; }
   }
 
   // --------------------------------------------------------------------
-  // Submit
+  // Submit — sends to backend (Cloudflare Worker), then redirects to thanks page.
+  // No mailto. No ASCII. Nothing visible to the user.
   // --------------------------------------------------------------------
+  const SUBMIT_ENDPOINT = 'https://api.yichamber.com/apply';
+
   const submitBtn = document.getElementById('submit-btn');
-  submitBtn.addEventListener('click', () => {
+  const submitLabel = submitBtn.querySelector('span:not(.btn__arrow)');
+  const originalLabel = submitLabel ? submitLabel.textContent : 'Submit my application to the Council';
+
+  async function submitApplication() {
     if (!validateStep(8)) {
       const firstError = form.querySelector('.step.is-active .field--error');
       if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
       return;
     }
 
+    // Visible state: submitting
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = '0.7';
+    submitBtn.style.cursor = 'wait';
+    if (submitLabel) submitLabel.textContent = 'Sending…';
+
     const data = collectData();
-    const firstName = data.firstname || '';
-    const lastName = data.lastname || '';
-    const tier = data.tier || 'not specified';
-
-    let body = 'Application to the Council of Ten\n';
-    body += '====================================\n\n';
-    body += 'Submitted: ' + new Date().toISOString() + '\n\n';
-
-    Object.keys(GROUPS).forEach((groupName) => {
-      body += '--- ' + groupName.toUpperCase() + ' ---\n';
-      GROUPS[groupName].forEach((key) => {
-        const label = FIELD_LABELS[key];
-        let value = data[key];
-        if (Array.isArray(value)) value = value.join(', ');
-        body += label + ': ' + (value || '—') + '\n';
-      });
-      body += '\n';
+    // Add checkbox states explicitly (FormData drops unchecked)
+    form.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+      data[cb.name] = cb.checked;
     });
 
-    body += '--- CONFIRMATIONS ---\n';
-    body += 'Understands material: ' + (data.confirm_understand ? 'yes' : 'no') + '\n';
-    body += 'Prepared with capital: ' + (data.confirm_capital ? 'yes' : 'no') + '\n';
-    body += 'Will visit Hoi An: ' + (data.confirm_visit ? 'yes' : 'no') + '\n';
-    body += 'Understands Council closure: ' + (data.confirm_council ? 'yes' : 'no') + '\n\n';
-    body += '— Sent via yichamber.com/apply';
+    // Compose payload
+    const payload = {
+      submitted_at: new Date().toISOString(),
+      source: 'yichamber.com/apply',
+      user_agent: navigator.userAgent,
+      fields: data
+    };
 
-    const subject = 'Application to the Council — ' + firstName + ' ' + lastName + ' — ' + tier;
-    const mailto = 'mailto:inquire@yichamber.com'
-      + '?subject=' + encodeURIComponent(subject)
-      + '&body=' + encodeURIComponent(body);
+    try {
+      const res = await fetch(SUBMIT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        // 30s timeout via AbortController would be ideal; keep simple
+      });
 
-    // Open email client
-    window.location.href = mailto;
+      if (!res.ok) {
+        throw new Error('Server returned ' + res.status);
+      }
 
-    // After a short delay, take user to thanks page
-    // (so even if mail client doesn't open, they reach confirmation)
-    setTimeout(() => {
-      // Clear draft so they can start fresh next time
+      // Success — clear draft and redirect
       try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
       window.location.href = 'apply-thanks.html';
-    }, 800);
-  });
+
+    } catch (err) {
+      // Failure — restore button and show inline error
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '';
+      submitBtn.style.cursor = '';
+      if (submitLabel) submitLabel.textContent = originalLabel;
+
+      // Show a quiet error message below the submit
+      let errBox = document.getElementById('submit-error');
+      if (!errBox) {
+        errBox = document.createElement('div');
+        errBox.id = 'submit-error';
+        errBox.style.cssText = 'margin-top: 1.5rem; padding: 1rem 1.2rem; border-left: 2px solid var(--cinnabar); background: rgba(139, 46, 31, 0.04); font-family: var(--font-display); font-style: italic; font-size: 0.98rem; color: var(--graphite); line-height: 1.55;';
+        submitBtn.closest('.step__nav').after(errBox);
+      }
+      errBox.innerHTML = 'The application could not be sent at this moment. Please write to <a href="mailto:inquire@yichamber.com" style="color: var(--brass); text-decoration: underline;">inquire@yichamber.com</a> directly &mdash; your draft is still saved on this page.';
+      errBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  }
+
+  submitBtn.addEventListener('click', submitApplication);
 
   // --------------------------------------------------------------------
   // Init
