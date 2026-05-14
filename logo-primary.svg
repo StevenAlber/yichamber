@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 120" width="480" height="120">
+  <!-- Yi Chamber Primary Logo - Hexagram 11 (Tai/Peace) + Wordmark -->
+  <!-- Heaven (3 solid lines) below, Earth (3 broken lines) above -->
+
+  <!-- Hexagram 11 - left side -->
+  <g transform="translate(20, 20)" fill="#1A1A1A">
+    <!-- Earth trigram (top) - 3 broken lines -->
+    <rect x="0" y="0" width="32" height="6" />
+    <rect x="48" y="0" width="32" height="6" />
+
+    <rect x="0" y="14" width="32" height="6" />
+    <rect x="48" y="14" width="32" height="6" />
+
+    <rect x="0" y="28" width="32" height="6" />
+    <rect x="48" y="28" width="32" height="6" />
+
+    <!-- Heaven trigram (bottom) - 3 solid lines -->
+    <rect x="0" y="46" width="80" height="6" />
+    <rect x="0" y="60" width="80" height="6" />
+    <rect x="0" y="74" width="80" height="6" />
+  </g>
+
+  <!-- Wordmark - right side -->
+  <text x="130" y="55"
+        font-family="'EB Garamond', Georgia, serif"
+        font-size="36"
+        font-weight="400"
+        letter-spacing="6"
+        fill="#1A1A1A">YI CHAMBER</text>
+
+  <!-- Chinese characters seal -->
+  <text x="130" y="90"
+        font-family="Noto Serif CJK TC"
+        font-size="20"
+        letter-spacing="8"
+        fill="#9C7B3C">易 室</text>
+</svg>

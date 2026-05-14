@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <!-- Yi Chamber Vertical Logo - for square formats, Instagram, business cards -->
+
+  <!-- Hexagram 11 - centered, top -->
+  <g transform="translate(80, 30)" fill="#1A1A1A">
+    <!-- Earth trigram (top) - 3 broken lines -->
+    <rect x="0" y="0" width="32" height="6" />
+    <rect x="48" y="0" width="32" height="6" />
+
+    <rect x="0" y="14" width="32" height="6" />
+    <rect x="48" y="14" width="32" height="6" />
+
+    <rect x="0" y="28" width="32" height="6" />
+    <rect x="48" y="28" width="32" height="6" />
+
+    <!-- Heaven trigram (bottom) - 3 solid lines -->
+    <rect x="0" y="46" width="80" height="6" />
+    <rect x="0" y="60" width="80" height="6" />
+    <rect x="0" y="74" width="80" height="6" />
+  </g>
+
+  <!-- Wordmark - centered below hexagram -->
+  <text x="120" y="160"
+        font-family="'EB Garamond', Georgia, serif"
+        font-size="22"
+        font-weight="400"
+        letter-spacing="4"
+        text-anchor="middle"
+        fill="#1A1A1A">YI CHAMBER</text>
+
+  <!-- Chinese characters -->
+  <text x="120" y="195"
+        font-family="Noto Serif CJK TC"
+        font-size="18"
+        letter-spacing="8"
+        text-anchor="middle"
+        fill="#9C7B3C">易 室</text>
+</svg>

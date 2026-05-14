@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Yi Chamber Mark - just hexagram 11 for favicon, small icons -->
+
+  <g transform="translate(10, 10)" fill="#1A1A1A">
+    <!-- Earth trigram (top) - 3 broken lines -->
+    <rect x="0" y="0" width="32" height="6" />
+    <rect x="48" y="0" width="32" height="6" />
+
+    <rect x="0" y="14" width="32" height="6" />
+    <rect x="48" y="14" width="32" height="6" />
+
+    <rect x="0" y="28" width="32" height="6" />
+    <rect x="48" y="28" width="32" height="6" />
+
+    <!-- Heaven trigram (bottom) - 3 solid lines -->
+    <rect x="0" y="46" width="80" height="6" />
+    <rect x="0" y="60" width="80" height="6" />
+    <rect x="0" y="74" width="80" height="6" />
+  </g>
+</svg>
